@@ -2,5 +2,8 @@
 'use strict';
 
 module.exports = {
-  name: 'dsember-core'
+  name: 'dsember-core',
+  isDevelopingAddon: function() {
+    return true;
+  }
 };

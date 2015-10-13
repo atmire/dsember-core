@@ -13,5 +13,13 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  //app.import('bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss');
+  //app.import('bower_components/blueimp-md5/js/md5.min.js', {
+  //  exports: {
+  //    'md5': ['md5']
+  //  }
+  //});
+  app.import('bower_components/blueimp-md5/js/md5.min.js');
+
   return app.toTree();
 };

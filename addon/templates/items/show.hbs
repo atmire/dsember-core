@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+<table class="table table-striped table-hover">
+    <tbody>
+    {{#each model.metadata as |metadatum|}}
+      {{items/detailed/item-metadatum-row metadatum=metadatum}}
+    {{/each}}
+    </tbody>
+</table>

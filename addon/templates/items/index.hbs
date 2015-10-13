@@ -1,0 +1,6 @@
+<h1>Items Index</h1>
+<ul>
+  {{#each model as |item|}}
+      <li>{{link-to item.name 'items.show' item}}</li>
+  {{/each}}
+</ul>

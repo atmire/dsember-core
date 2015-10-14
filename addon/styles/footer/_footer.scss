@@ -1,0 +1,12 @@
+$footer-border-color: #eee; //TODO link to bootstrap $gray-lighter
+$footer-height: 5em;
+$footer-margin-top: 3em;
+$footer-bg-color: #f8f8f8; //TODO $navbar-default-bg
+
+footer {
+  border-top: 1px solid $footer-border-color;
+  padding-top: 25px;
+  background-color: $footer-bg-color;
+}
+
+@import 'sticky-footer';

@@ -9,11 +9,11 @@ export default {
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
 
-  "item": {
-    "detailed": {
-      "key": "Key",
-      "value": "Value",
-      "language": "Lang"
-    }
-  }
+  "item.detailed.key": "Key",
+  "item.detailed.value": "Value",
+  "item.detailed.language": "Lang",
+
+  "footer.link.dspace": "DSpace software",
+  "footer.copyright": "copyright © 2002-",
+  "footer.link.duraspace": "DuraSpace"
 };

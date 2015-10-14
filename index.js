@@ -22,5 +22,6 @@ module.exports = {
     );
 
     target.import('bower_components/blueimp-md5/js/md5.min.js');
+    target.import('bower_components/moment/min/moment.min.js');
   }
 };

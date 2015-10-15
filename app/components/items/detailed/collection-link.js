@@ -1,0 +1,1 @@
+export { default } from 'dsember-core/components/items/detailed/collection-link';

@@ -13,6 +13,8 @@ export default {
   "item.detailed.value": "Value",
   "item.detailed.language": "Lang",
 
+  "item.detailed.collections.head": "This item appears in the following Collection(s)",
+
   "bitstream.detailed.file-section.head": "Files in this item",
   "bitstream.detailed.file-section.name": "Name",
   "bitstream.detailed.file-section.size": "Size",

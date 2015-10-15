@@ -1,0 +1,14 @@
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>{{t "item.detailed.key"}}</th>
+        <th>{{t "item.detailed.value"}}</th>
+        <th>{{t "item.detailed.language"}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each metadata as |metadatum|}}
+      {{items/detailed/item-metadatum-row metadatum=metadatum}}
+    {{/each}}
+    </tbody>
+</table>

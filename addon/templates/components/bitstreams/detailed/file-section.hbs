@@ -1,0 +1,8 @@
+{{#if fileRows}}
+    <h2>{{t "bitstream.detailed.file-section.head"}}</h2>
+    <div class="file-list">
+      {{#each fileRows as |row|}}
+        {{bitstreams/detailed/file-section-row row=row restNamespace=restNamespace}}
+      {{/each}}
+    </div>
+{{/if}}

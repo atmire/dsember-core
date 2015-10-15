@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { formatDate } from '../utils/date-helpers';
+import { formatDate } from '../utils/date-utils';
 
 export function formattedCurrentDate([format]) {
   return formatDate(Date.now(), format);

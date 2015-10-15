@@ -1,14 +1,11 @@
 import Ember from 'ember';
+import NamespaceMixin from '../../mixins/namespace';
 
-export default Ember.ObjectController.extend({
+export default Ember.ObjectController.extend(NamespaceMixin, {
   title: Ember.computed('model.metadata.[]', function() {
     return this.get('model.metadata')
       .findBy('key', 'dc.title') //TODO handle multiple titles, and use UI language
       .get('value');
-  }),
-
-  restNamespace: Ember.computed('store', function() {
-    return this.store.adapterFor('application').get('namespace');
   }),
 
   fileRows: Ember.computed('model.originals.[]', function() {

@@ -9,6 +9,9 @@ export default {
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
 
+  "collection.news": "News",
+  "collection.logo.alt": "The collection's logo",
+
   "item.detailed.key": "Key",
   "item.detailed.value": "Value",
   "item.detailed.language": "Lang",
@@ -26,5 +29,5 @@ export default {
 
   "footer.link.dspace": "DSpace software",
   "footer.copyright": "copyright © 2002-",
-  "footer.link.duraspace": "DuraSpace"
+  "footer.link.duraspace": "DuraSpace",
 };

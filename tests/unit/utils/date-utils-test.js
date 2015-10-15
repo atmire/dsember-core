@@ -1,4 +1,4 @@
-import dateHelpers from '../../../utils/date-helpers';
+import dateHelpers from '../../../utils/date-utils';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | date helpers');

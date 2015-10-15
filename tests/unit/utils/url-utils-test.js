@@ -1,10 +1,10 @@
-import md5Helper from '../../../utils/md5-helper';
+import urlUtils from '../../../utils/url-utils';
 import { module, test } from 'qunit';
 
-module('Unit | Utility | md5 helper');
+module('Unit | Utility | url utils');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var result = md5Helper();
+  var result = urlUtils();
   assert.ok(result);
 });

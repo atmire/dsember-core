@@ -1,17 +1,3 @@
 <h1 class="page-header">{{title}}</h1>
-<div class="table-responsive">
-    <table class="table table-striped table-hover">
-        <thead>
-        <tr>
-            <th>{{t "item.detailed.key"}}</th>
-            <th>{{t "item.detailed.value"}}</th>
-            <th>{{t "item.detailed.language"}}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {{#each model.metadata as |metadatum|}}
-          {{items/detailed/item-metadatum-row metadatum=metadatum}}
-        {{/each}}
-        </tbody>
-    </table>
-</div>
+{{items/detailed/item-metadata-table metadata=metadata}}
+{{bitstreams/detailed/file-section fileRows=fileRows restNamespace=restNamespace}}

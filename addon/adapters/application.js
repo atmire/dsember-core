@@ -2,6 +2,7 @@ import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
   namespace: 'rest',
+  coalesceFindRequests: true,
   ajax(url, type, hash) {
     if (Ember.isEmpty(hash))
       hash = {};

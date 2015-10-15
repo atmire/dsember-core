@@ -13,6 +13,15 @@ export default {
   "item.detailed.value": "Value",
   "item.detailed.language": "Lang",
 
+  "bitstream.detailed.file-section.head": "Files in this item",
+  "bitstream.detailed.file-section.name": "Name",
+  "bitstream.detailed.file-section.size": "Size",
+  "bitstream.detailed.file-section.format": "Format",
+  "bitstream.detailed.file-section.view-open": "View/<wbr>Open",
+
+  "thumbnail.alt": "Thumbnail",
+  "thumbnail.not-found.alt": "No Thumbnail",
+
   "footer.link.dspace": "DSpace software",
   "footer.copyright": "copyright © 2002-",
   "footer.link.duraspace": "DuraSpace"

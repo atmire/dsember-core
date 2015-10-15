@@ -1,5 +1,11 @@
 'use strict';
 
 module.exports = function(/* environment, appConfig */) {
-  return { };
+  var bootstrapPath = require('path').join(__dirname, '..', 'bower_components', 'bootstrap-sass', 'assets', 'stylesheets');
+
+  return {
+    sassOptions: {
+      includePaths: [ bootstrapPath ]
+    }
+  };
 };

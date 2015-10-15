@@ -7,14 +7,13 @@ export default DSpaceObject.extend({
   lastModified: DS.attr('date'),
   withdrawn: DS.attr('boolean'),
   bitstreams: DS.hasMany('bitstream', { async: true }),
+  parentCollectionId: DS.attr('number'),
   parentCollectionList: DS.hasMany('collection', { async: true }),
-  //parentCollection: DS.belongsTo('collection', { async: true }), //TODO this relation as it is can't work in ember, because the REST API doesn't return a relationship on the collection side to match it
   parentCommunityList: DS.hasMany('community', { async: true }),
   metadata: DS.hasMany('metadatum'),
 
-  //fills in for the missing parentCollection
-  owningCollection: Ember.computed('parentCollectionList.[]', function() {
-    return this.get('parentCollectionList.firstObject');
+  owningCollection: Ember.computed('parentCollectionId', 'parentCollectionList.@each.id', function() {
+    return this.get('parentCollectionList').findBy('id', this.get('parentCollectionId'));
   }),
 
   originals: Ember.computed('bitstreams.@each.bundleName', function() {
@@ -27,9 +26,9 @@ export default DSpaceObject.extend({
 
   //TODO should probably be cached to improve performance. Remember that the cache should also observe the bitstreams array, to invalidate itself
   getMatchingThumbnailFor: function (original) {
-    return this.get('thumbnails').filter(function (thumbnail) {
+    return this.get('thumbnails').find(function (thumbnail) {
       let startsWith = new RegExp(`^${original.get('name')}\.[^\.]+$`);
       return startsWith.test(thumbnail.get('name'));
-    }).get('firstObject');
+    });
   }
 });

@@ -2,8 +2,8 @@ import DS from 'ember-data';
 import DSpaceObject from './dspace-object';
 
 export default DSpaceObject.extend({
-  logo: DS.belongsTo('logo'),
-  parentCommunity: DS.belongsTo('community', { async: true }),
+  logo: DS.belongsTo('bitstream'),
+  parentCommunityId: DS.attr('number'),
   parentCommunityList: DS.hasMany('community', { async: true }),
   license: DS.attr('string'),
   copyrightText: DS.attr('string'),
@@ -11,7 +11,9 @@ export default DSpaceObject.extend({
   shortDescription: DS.attr('string'),
   sidebarText: DS.attr('string'),
   numberItems: DS.attr('number'),
-  subcommunities: DS.hasMany('community', { async: true }),
-  collections: DS.hasMany('collection', { async: true }),
-  items: DS.hasMany('item', { async: true })
+  items: DS.hasMany('item', { async: true }),
+
+  parentCommunity: Ember.computed('parentCommunityId', 'parentCommunityList.@each.id', function() {
+    return this.get('parentCommunityList').findBy('id', this.get('parentCommunityId'));
+  })
 });

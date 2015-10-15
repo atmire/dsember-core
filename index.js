@@ -21,7 +21,8 @@ module.exports = {
       path.join(target.bowerDirectory, 'bootstrap-sass', 'assets', 'stylesheets')
     );
 
-    target.import('bower_components/blueimp-md5/js/md5.min.js');
-    target.import('bower_components/moment/min/moment.min.js');
+    target.import(path.join(target.bowerDirectory, 'blueimp-md5', 'js', 'md5.min.js'));
+    target.import(path.join(target.bowerDirectory, 'moment', 'min', 'moment.min.js'));
+    target.import(path.join(target.bowerDirectory, 'holderjs', 'holder.min.js'));
   }
 };

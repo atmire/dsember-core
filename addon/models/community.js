@@ -10,5 +10,11 @@ export default DSpaceObject.extend({
   sidebarText: DS.attr('string'),
   countItems: DS.attr('number'),
   subcommunities: DS.hasMany('community', { async: true, inverse: 'parentCommunity' }),
-  collections: DS.hasMany('collection', { async: true })
+  collections: DS.hasMany('collection', { async: true }),
+
+  parentId: Ember.computed('parentCommunity', function() {
+    return this.get('parentCommunity.id')
+  }),
+  parentType: 'community'
+
 });

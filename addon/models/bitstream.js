@@ -10,6 +10,7 @@ export default DSpaceObject.extend({
   retrieveLink: DS.attr('string'),
   sequenceId: DS.attr('number'),
   parentObject: DS.belongsTo('dspace-object', { async: true }),
-  policies: DS.hasMany('policy')
+  policies: DS.hasMany('policy'),
   //checksum: leaving out for now
+  parent: Ember.computed.alias('parentObject')
 });

@@ -1,0 +1,11 @@
+.breadcrumb {
+  > li {
+    + li:before {
+      content: none;
+    }
+    &.breadcrumb-separator {
+      padding: 0 5px;
+      color: $breadcrumb-color;
+    }
+  }
+}

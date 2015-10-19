@@ -13,9 +13,8 @@ export default DSpaceObject.extend({
   numberItems: DS.attr('number'),
   items: DS.hasMany('item', { async: true }),
 
-  parentCommunity: Ember.computed('parentCommunityId', 'parentCommunityList.@each.id', function() {
-    return this.get('parentCommunityList').findBy('id', this.get('parentCommunityId'));
-  }),
+  parentId: Ember.computed.alias('parentCommunityId'),
+  parentType: 'community',
 
   news: Ember.computed.alias('sidebarText')
 });

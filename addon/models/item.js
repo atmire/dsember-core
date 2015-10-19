@@ -12,9 +12,8 @@ export default DSpaceObject.extend({
   parentCommunityList: DS.hasMany('community', { async: true }),
   metadata: DS.hasMany('metadatum'),
 
-  owningCollection: Ember.computed('parentCollectionId', 'parentCollectionList.@each.id', function() {
-    return this.get('parentCollectionList').findBy('id', this.get('parentCollectionId'));
-  }),
+  parentId: Ember.computed.alias('parentCollectionId'),
+  parentType: 'collection',
 
   originals: Ember.computed('bitstreams.@each.bundleName', function() {
     return this.get('bitstreams').filterBy('bundleName', 'ORIGINAL');

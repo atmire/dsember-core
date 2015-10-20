@@ -2,7 +2,7 @@ import DS from 'ember-data';
 import DSpaceObject from './dspace-object';
 
 export default DSpaceObject.extend({
-  logo: DS.belongsTo('bitstream'),
+  logo: DS.belongsTo('bitstream', { async: true }),
   parentCommunity: DS.belongsTo('community', { async: true }),
   copyrightText: DS.attr('string'),
   introductoryText: DS.attr('string'),
@@ -15,6 +15,7 @@ export default DSpaceObject.extend({
   parentId: Ember.computed('parentCommunity', function() {
     return this.get('parentCommunity.id')
   }),
-  parentType: 'community'
+  parentType: 'community',
 
+  news: Ember.computed.alias('sidebarText')
 });

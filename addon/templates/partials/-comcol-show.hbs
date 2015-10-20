@@ -1,0 +1,14 @@
+<h1 class="page-header">{{name}}</h1>
+{{#if logo}}
+    <p><img class="logo img-responsive" src="{{logoUrl}}" alt="{{t 'comcol.logo.alt'}}"></p>
+{{/if}}
+{{#if introductoryText}}
+    <p>{{{introductoryText}}}</p>
+{{/if}}
+{{#if news}}
+    <h2>{{t "comcol.news.head"}}</h2>
+    <p>{{{news}}}</p>
+{{/if}}
+{{#if copyrightText}}
+    <p>{{{copyrightText}}}</p>
+{{/if}}

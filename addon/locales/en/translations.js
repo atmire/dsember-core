@@ -9,8 +9,8 @@ export default {
   //
   // "key.with.interpolation": "Text with {{anInterpolation}}"
 
-  "collection.news": "News",
-  "collection.logo.alt": "The collection's logo",
+  "comcol.news.head": "News",
+  "comcol.logo.alt": "The logo",
 
   "item.detailed.key": "Key",
   "item.detailed.value": "Value",

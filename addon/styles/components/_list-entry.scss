@@ -1,0 +1,26 @@
+$second-line-color: $headings-small-color;
+$item-title-font-size: $font-size-base;
+$metadata-font-size: $font-size-small;
+$list-entry-margin-botom: $line-height-computed;
+
+.list-entry {
+  margin-bottom: $list-entry-margin-botom;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .item-title {
+    font-size: $item-title-font-size;
+  }
+
+  .item-author,
+  .item-date {
+    font-size: $metadata-font-size;
+    color: $second-line-color;
+  }
+
+  .item-abstract {
+    font-size: $metadata-font-size;
+  }
+}

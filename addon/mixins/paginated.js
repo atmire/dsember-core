@@ -10,6 +10,7 @@ export default Ember.Mixin.create({
   hasNextPage: Ember.computed('offset', 'limit', 'total', function(){
     return (this.get('offset') + this.get('limit')) < this.get('total');
   }),
+  needsPagination: Ember.computed.or('hasPreviousPage', 'hasNextPage'),
   actions: {
     previousPage() {
       var totalPages = Math.ceil(this.get('total')/this.get('limit'));

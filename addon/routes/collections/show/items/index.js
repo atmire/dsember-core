@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   offset: 0,
-  limit: 2,
+  limit: 5,
   queryParams: {
     page: {
       refreshModel: true

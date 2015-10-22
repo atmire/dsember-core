@@ -60,5 +60,9 @@ export default Ember.Component.extend({
       }
 
       return breadCrumbs;
-    })
+    }),
+
+  cuttoffLength: Ember.computed('breadCrumbs.[]', function() {
+    return Math.max(90 / this.get('breadCrumbs').length, 30);
+  })
 });

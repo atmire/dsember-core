@@ -5,15 +5,15 @@
             {{#if crumb.linkable}}
               {{#if crumb.model}}
                 {{#link-to crumb.path crumb.model}}
-                  {{truncate crumb.label 30}}
+                  {{truncate crumb.label cuttoffLength}}
                 {{/link-to}}
               {{else}}
                 {{#link-to crumb.path}}
-                  {{truncate crumb.label 30}}
+                  {{truncate crumb.label cuttoffLength}}
                 {{/link-to}}
               {{/if}}
             {{else}}
-              {{truncate crumb.label 30}}
+              {{truncate crumb.label cuttoffLength}}
             {{/if}}
           </li>
         {{#unless crumb.isCurrent}}

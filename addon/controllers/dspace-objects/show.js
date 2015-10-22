@@ -1,11 +1,10 @@
 import Ember from 'ember';
-import NamespaceMixin from '../../mixins/namespace';
 import {
   getShowRouteForDSOType,
   fillParentsArray
 } from '../../utils/dso-utils';
 
-export default Ember.ObjectController.extend(NamespaceMixin, {
+export default Ember.Controller.extend({
   parents: [],
 
   initParents: Ember.on('init', Ember.observer('model', function() {
@@ -28,12 +27,11 @@ export default Ember.ObjectController.extend(NamespaceMixin, {
       });
     }
     let model = this.get('model');
-    let name = this.get('name');
+    let name = model.get('name');
     if (Ember.isPresent(model) && Ember.isPresent(name)) {
       result.push({
         label: name,
-        model: model,
-        linkable: false
+        model: model
       });
     }
     return result;

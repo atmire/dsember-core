@@ -17,3 +17,7 @@
   hyphens: auto;
 
 }
+
+//reset for links without a href attribute (often needed for bootstrap components)
+a { cursor: pointer; }
+a:hover,a.hover { text-decoration: underline; }

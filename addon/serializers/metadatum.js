@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import { md5 } from '../utils/md5';
+import { md5 } from 'dsember-core/utils/md5';
 
 export default DS.JSONSerializer.extend({
   isNewSerializerAPI: true,

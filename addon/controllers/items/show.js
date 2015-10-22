@@ -1,7 +1,8 @@
 import Ember from 'ember';
-import DSOShowController from '../dspace-objects/show';
+import DSOShowController from 'dsember-core/controllers/dspace-objects/show';
+import NamespaceMixin from 'dsember-core/mixins/namespace';
 
-export default DSOShowController.extend({
+export default DSOShowController.extend(NamespaceMixin, {
   title: Ember.computed('model.metadata.[]', function() {
     return this.get('model.metadata')
       .findBy('key', 'dc.title') //TODO handle multiple titles, and use UI language

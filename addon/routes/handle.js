@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { getShowRouteForDSOType } from '../../utils/dso-util'
+import { getShowRouteForDSOType } from 'dsember-core/utils/dso-util'
 
 export default Ember.Route.extend({
   model(params) {

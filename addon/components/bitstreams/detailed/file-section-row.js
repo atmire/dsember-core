@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../../../templates/components/bitstreams/detailed/file-section-row';
-import { combineURLParts } from '../../../utils/url-utils';
+import { combineURLParts } from 'dsember-core/utils/url-utils';
 
 export default Ember.Component.extend({
   layout: layout,

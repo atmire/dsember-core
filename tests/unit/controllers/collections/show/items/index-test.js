@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('controller:dspace-objects/comcol-show', {
+moduleFor('controller:collections/show/items/index', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

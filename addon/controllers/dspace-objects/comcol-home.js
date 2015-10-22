@@ -1,9 +1,9 @@
 import Ember from 'ember';
-import { combineURLParts } from '../../utils/url-utils';
-import DSOShowController from '../dspace-objects/show';
+import NamespaceMixin from 'dsember-core/mixins/namespace';
+import { combineURLParts } from 'dsember-core/utils/url-utils';
 
 
-export default DSOShowController.extend({
+export default Ember.Controller.extend(NamespaceMixin, {
   logoUrl: Ember.computed('restNamespace', 'model.logo.retrieveLink', function() {
     if (Ember.isPresent(this.get('model.logo.retrieveLink'))) {
       return combineURLParts(this.get('restNamespace'), this.get('model.logo.retrieveLink'));

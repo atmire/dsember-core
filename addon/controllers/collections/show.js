@@ -1,4 +1,4 @@
-import ComColShowController from '../dspace-objects/comcol-show';
+import DSOShowController from '../dspace-objects/show';
 
-export default ComColShowController.extend({
+export default DSOShowController.extend({
 });

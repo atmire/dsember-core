@@ -1,6 +1,12 @@
+@import 'variables';
 @import 'bootstrap';
 @import 'header';
 @import 'bread-crumb-trail';
 @import 'footer/footer';
 @import 'bitstreams/thumbnail';
 @import 'utils';
+
+
+.tab-content {
+  margin-top: $panel-body-padding;
+}

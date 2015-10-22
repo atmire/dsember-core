@@ -1,0 +1,13 @@
+<ul>
+  {{#each model as |item|}}
+      <li>{{link-to item.name 'items.show' item}}</li>
+  {{/each}}
+</ul>
+<ul class="pager">
+    {{#pagination-base action='previousPage' isEnabled=hasPreviousPage class="previous"}}
+          <span aria-hidden="true">&laquo;</span> {{t "pagination.prev"}}
+      {{/pagination-base}}
+    {{#pagination-base action='nextPage' isEnabled=hasNextPage class="next"}}
+      {{t "pagination.next"}} <span aria-hidden="true">&raquo;</span>
+    {{/pagination-base}}
+</ul>

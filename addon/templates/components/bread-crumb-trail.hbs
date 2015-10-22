@@ -1,19 +1,19 @@
 {{#if breadCrumbs.length}}
     <ol class="breadcrumb">
       {{#each breadCrumbs as |crumb|}}
-          <li class={{if crumb.isCurrent 'active'}}>
+          <li class={{if crumb.isCurrent 'active'}} title={{crumb.label}}>
             {{#if crumb.linkable}}
-              {{#if crumb.model}}{{! to avoid null/undefined model in link-to }}
+              {{#if crumb.model}}
                 {{#link-to crumb.path crumb.model}}
-                  {{crumb.label}}
+                  {{truncate crumb.label 30}}
                 {{/link-to}}
               {{else}}
                 {{#link-to crumb.path}}
-                  {{crumb.label}}
+                  {{truncate crumb.label 30}}
                 {{/link-to}}
               {{/if}}
             {{else}}
-              {{crumb.label}}
+              {{truncate crumb.label 30}}
             {{/if}}
           </li>
         {{#unless crumb.isCurrent}}

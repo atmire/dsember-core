@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../../templates/components/bitstreams/thumb-nail';
-import Holder from '../../utils/holder';
+import Holder from 'dsember-core/utils/holder';
 
 export default Ember.Component.extend({
   layout: layout,

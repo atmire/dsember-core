@@ -11,7 +11,9 @@ export default {
 
   "comcol.news.head": "News",
   "comcol.logo.alt": "The logo",
-  "comcol.browse.trail": "Browse",
+
+  "trail.home": "Home",
+  "trail.browse": "Browse",
 
   "pagination.prev": "Previous",
   "pagination.next": "Next",

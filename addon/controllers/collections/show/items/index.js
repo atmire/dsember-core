@@ -6,6 +6,6 @@ export default Ember.ArrayController.extend(Paginated, {
     return this.get('collection.numberItems');
   }),
   breadCrumb: Ember.computed('i18n.locale', function() {
-    return this.get('i18n').t('comcol.browse.trail');
+    return this.get('i18n').t('trail.browse');
   })
 });

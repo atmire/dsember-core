@@ -3,7 +3,7 @@ import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
   namespace: 'rest',
-  coalesceFindRequests: true,
+  //coalesceFindRequests: true, -> commented out, because it only works for some endpoints (e.g. items) and not others (e.g. communities)
   ajax(url, type, hash) {
     if (Ember.isEmpty(hash)) {
       hash = {};

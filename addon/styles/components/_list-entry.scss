@@ -10,10 +10,12 @@ $list-entry-margin-botom: $line-height-computed;
     margin-bottom: 0;
   }
 
+  .comcol-title,
   .item-title {
     font-size: $item-title-font-size;
   }
 
+  .comcol-description,
   .item-author,
   .item-date {
     font-size: $metadata-font-size;

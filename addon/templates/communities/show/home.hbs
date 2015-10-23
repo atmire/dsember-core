@@ -1,1 +1,15 @@
 {{partial "partials/-comcol-show"}}
+
+{{#if model.subcommunities}}
+    <h2>{{t "community.subcom.head"}}</h2>
+    {{#each model.subcommunities as |child|}}
+      {{comcols/list-entry model=child}}
+    {{/each}}
+{{/if}}
+
+{{#if model.collections}}
+    <h2>{{t "community.col.head"}}</h2>
+    {{#each model.collections as |child|}}
+      {{comcols/list-entry model=child}}
+    {{/each}}
+{{/if}}

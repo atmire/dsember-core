@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 import DSpaceObject from './dspace-object';
 
@@ -13,7 +14,7 @@ export default DSpaceObject.extend({
   collections: DS.hasMany('collection', { async: true }),
 
   parentId: Ember.computed('parentCommunity', function() {
-    return this.get('parentCommunity.id')
+    return this.get('parentCommunity.id');
   }),
   parentType: 'community',
 

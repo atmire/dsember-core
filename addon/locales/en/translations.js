@@ -12,6 +12,12 @@ export default {
   "comcol.news.head": "News",
   "comcol.logo.alt": "The logo",
 
+  "community.subcom.head": "Sub-communities in this community",
+  "community.col.head": "Collections in this community",
+
+  "homepage.toplvlcol.head": "Communities in DSpace",
+  "homepage.toplvlcol.intro": "Select a community to browse its collections",
+
   "trail.home": "Home",
   "trail.browse": "Browse",
 

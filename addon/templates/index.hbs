@@ -1,0 +1,6 @@
+{{partial "partials/mock-news"}}
+<h1 class="page-header">{{t "homepage.toplvlcol.head"}}</h1>
+<p>{{t "homepage.toplvlcol.intro"}}</p>
+{{#each model as |community|}}
+  {{comcols/list-entry model=community}}
+{{/each}}

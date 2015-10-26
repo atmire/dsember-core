@@ -7,7 +7,7 @@ export default Ember.Component.extend({
   classNames: [ 'thumbnail' ],
   runHolderJS: function() {
     if (Ember.isNone(this.get('thumbnailLink'))) {
-      Ember.run.next(() => {
+      Ember.run.scheduleOnce('afterRender', () => {
         Holder.run({
           images: this.$('img').get(0)
         });

@@ -21,6 +21,22 @@ module.exports = {
       path.join(target.bowerDirectory, 'bootstrap-sass', 'assets', 'stylesheets')
     );
 
+    target.import(path.join(target.bowerDirectory, 'bootstrap-sass', 'assets', 'fonts', 'bootstrap', 'glyphicons-halflings-regular.eot'), {
+      destDir: path.join('assets', 'fonts')
+    });
+
+    target.import(path.join(target.bowerDirectory, 'bootstrap-sass', 'assets', 'fonts', 'bootstrap', 'glyphicons-halflings-regular.svg'), {
+      destDir: path.join('assets', 'fonts')
+    });
+
+    target.import(path.join(target.bowerDirectory, 'bootstrap-sass', 'assets', 'fonts', 'bootstrap', 'glyphicons-halflings-regular.ttf'), {
+      destDir: path.join('assets', 'fonts')
+    });
+
+    target.import(path.join(target.bowerDirectory, 'bootstrap-sass', 'assets', 'fonts', 'bootstrap', 'glyphicons-halflings-regular.woff2'), {
+      destDir: path.join('assets', 'fonts')
+    });
+
     target.import(path.join(target.bowerDirectory, 'blueimp-md5', 'js', 'md5.min.js'));
     target.import(path.join(target.bowerDirectory, 'moment', 'min', 'moment.min.js'));
     target.import(path.join(target.bowerDirectory, 'holderjs', 'holder.min.js'));

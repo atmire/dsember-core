@@ -1,0 +1,10 @@
+{{side-bar/simple-section-element model=model}}
+{{#if model.children}}
+    <ul>
+      {{#each model.children as |child|}}
+        <li>
+            {{component child.componentName model=child}}
+        </li>
+      {{/each}}
+    </ul>
+{{/if}}

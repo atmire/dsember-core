@@ -20,5 +20,11 @@ export default DSOShowController.extend(NamespaceMixin, {
       result.push(row);
     });
     return result;
-  })
+  }),
+
+  sidebarSection: {
+    id: 'item-page-section',
+    componentName: 'side-bar/simple-section',
+    label: 'Item Page Only'
+  }
 });

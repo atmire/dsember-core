@@ -1,0 +1,134 @@
+@media screen and (max-width: $screen-sm-max) {
+
+  #main-container {
+    overflow-x: hidden;
+
+    &.opened {
+      overflow-x: visible;
+    }
+  }
+
+  //#sidebar{
+  //  display: none;
+  //}
+
+  /*
+   * Off Canvas : improved version of http://getbootstrap.com/examples/offcanvas/
+   * --------------------------------------------------
+   */
+
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -25%; /* 3 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -25%; /* 3 columns */
+  }
+
+  #main-container.opened {
+    .row-offcanvas-right {
+      right: 25%; /* 3 columns */
+    }
+
+    .row-offcanvas-left {
+      left: 25%; /* 3 columns */
+    }
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 25%; /* 3 columns */
+  }
+}
+
+@media screen and (max-width: $screen-xs-max) {
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -100%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -100%; /* 6 columns */
+  }
+
+  #main-container.opened {
+    .row-offcanvas-right {
+
+      .main-content {
+        padding-right: $grid-gutter-width;
+      }
+
+      .sidebar-offcanvas {
+        margin-right: $grid-gutter-width;
+      }
+
+      right: 100%; /* 6 columns */
+    }
+
+    .row-offcanvas-left {
+
+      .main-content {
+        padding-left: $grid-gutter-width;
+      }
+
+      .sidebar-offcanvas {
+        margin-left: $grid-gutter-width;
+      }
+
+      left: 100%; /* 6 columns */
+    }
+  }
+
+  .sidebar-offcanvas {
+    width: 100%; /* 6 columns */
+  }
+}
+
+.sidebar-toggle {
+  position: relative;
+  float: left;
+  //margin-left: $navbar-padding-horizontal;
+  padding: 9px 10px;
+  @include navbar-vertical-align(34px);
+  background-color: transparent;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  border-radius: $border-radius-base;
+
+  // We remove the `outline` here, but later compensate by attaching `:hover`
+  // styles to `:focus`.
+  &:focus {
+    outline: 0;
+  }
+
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: $navbar-inverse-toggle-icon-bar-bg;
+  }
+  .icon-bar + .icon-bar {
+    margin-top: 4px;
+  }
+}

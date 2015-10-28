@@ -23,8 +23,8 @@ export default DSOShowController.extend(NamespaceMixin, {
     return result;
   }),
 
-  sidebarSection: SidebarSection.create({
-    id: 'item-page-section',
-    label: 'Item Page Only'
-  })
+  //sidebarSection: SidebarSection.create({
+  //  id: 'item-page-section',
+  //  label: 'Item Page Only'
+  //})
 });

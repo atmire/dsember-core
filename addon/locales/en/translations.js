@@ -42,4 +42,12 @@ export default {
   "footer.link.dspace": "DSpace software",
   "footer.copyright": "copyright © 2002-",
   "footer.link.duraspace": "DuraSpace",
+
+  "sidebar.my-account.head": "My Account",
+  "sidebar.my-account.login": "Login",
+  "sidebar.my-account.register": "Register",
+
+  "sidebar.context-collection.head": "This Collection",
+  "sidebar.context-collection.home": "Home",
+  "sidebar.context-collection.browse": "Browse",
 };

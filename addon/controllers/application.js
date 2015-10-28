@@ -16,89 +16,28 @@ export default Ember.Controller.extend({
     }
   },
 
-  sidebarSections: [
-    SidebarSection.create({
-      id: 'my-account',
-      label: 'My Account',
-      children: [
-        SidebarSection.create({
-          label: 'Login',
-          link: {
-            route: 'items.show',
-            id: 1
-          }
-        }),
-        SidebarSection.create({
-          label: 'Register',
-          link: {
-            route: 'items.show',
-            id: 2
-          }
-        }),
-        SidebarSection.create({
-          id: 'my-account',
-          label: 'My Account',
-          children: [
-            SidebarSection.create({
-              label: 'Login',
-              link: {
-                route: 'items.show',
-                id: 1
-              }
-            }),
-            SidebarSection.create({
-              label: 'Register',
-              link: {
-                route: 'items.show',
-                id: 2
-              }
-            })
-          ]
-        })
-      ]
-
-    }),
-    SidebarSection.create({
-      id: 'my-account',
-      label: 'My Account',
-      children: [
-        SidebarSection.create({
-          label: 'Login',
-          link: {
-            route: 'items.show',
-            id: 1
-          }
-        }),
-        SidebarSection.create({
-          label: 'Register',
-          link: {
-            route: 'items.show',
-            id: 2
-          }
-        }),
-        SidebarSection.create({
-          id: 'my-account',
-          label: 'My Account',
-          children: [
-            SidebarSection.create({
-              label: 'Login',
-              link: {
-                route: 'items.show',
-                id: 1
-              }
-            }),
-            SidebarSection.create({
-              label: 'Register',
-              link: {
-                route: 'items.show',
-                id: 2
-              }
-            })
-          ]
-        })
-      ]
-
-    })
-  ]
-
+  sidebarSections: Ember.computed('i18n.locale', function() {
+    return [
+      SidebarSection.create({
+        id: 'my-account',
+        label: this.get('i18n').t('sidebar.my-account.head'),
+        children: [
+          SidebarSection.create({
+            label: this.get('i18n').t('sidebar.my-account.login'),
+            link: {
+              route: 'items.show',
+              id: 1
+            }
+          }),
+          SidebarSection.create({
+            label: this.get('i18n').t('sidebar.my-account.register'),
+            link: {
+              route: 'items.show',
+              id: 2
+            }
+          })
+        ]
+      })
+    ]
+  })
 });

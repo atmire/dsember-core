@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import DSOShowController from 'dsember-core/controllers/dspace-objects/show';
 import NamespaceMixin from 'dsember-core/mixins/namespace';
+import SidebarSection from 'dsember-core/utils/sidebar-section';
 
 export default DSOShowController.extend(NamespaceMixin, {
   title: Ember.computed('model.metadata.[]', function() {
@@ -22,9 +23,8 @@ export default DSOShowController.extend(NamespaceMixin, {
     return result;
   }),
 
-  sidebarSection: {
+  sidebarSection: SidebarSection.create({
     id: 'item-page-section',
-    componentName: 'side-bar/simple-section',
     label: 'Item Page Only'
-  }
+  })
 });

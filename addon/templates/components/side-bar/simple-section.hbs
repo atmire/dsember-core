@@ -2,9 +2,7 @@
 {{#if model.children}}
     <ul>
       {{#each model.children as |child|}}
-        <li>
-            {{component child.componentName model=child}}
-        </li>
+          {{component child.componentName model=child tagName="li"}}
       {{/each}}
     </ul>
 {{/if}}

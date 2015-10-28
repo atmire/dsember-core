@@ -2,32 +2,22 @@ import Ember from 'ember';
 import layout from '../templates/components/side-bar';
 import RouteAwareComponent from '../components/route-aware-component';
 
-function createSectionObject(section) {
-  let result = Ember.Object.create({
-    id: section.id,
-    componentName: section.componentName,
-    label: section.label
+function orderSections(sections) {
+  sections.forEach(function(section, index) {
+    if (Ember.isBlank(section.get('index'))) {
+      section.set('index', index + 1);
+    }
+    if (Ember.isPresent(section.get('children'))) {
+      section.set('children', orderSections(section.get('children')));
+    }
   });
-  if (Ember.isPresent(section.link)) {
-    result.set('link', Ember.Object.create({
-      route: section.link.route,
-      id: section.link.id
-    }));
-  }
-  if (Ember.isPresent(section.children)) {
-    let children = [];
-    section.children.forEach(function(child) {
-      children.push(createSectionObject(child));
-    });
-    result.set('children', children);
-  }
-  return result;
+  return sections.sortBy('index');
 }
 
 export default RouteAwareComponent.extend({
   layout: layout,
   tagName: 'aside',
-  className: 'sidebar-menu',
+  classNames: ['sidebar-menu'],
 
   sidebarSections: Ember.computed("controllers.@each.sidebarSections",
     "controllers.@each.sidebarSection", function() {
@@ -39,14 +29,14 @@ export default RouteAwareComponent.extend({
         let singleSection = controller.get("sidebarSection");
 
         if (Ember.isPresent(singleSection)) {
-          sidebarSections.addObject(createSectionObject(singleSection));
+          sidebarSections.addObject(singleSection);
         }
 
         sections.forEach(function (section) {
-          sidebarSections.addObject(createSectionObject(section));
+          sidebarSections.addObject(section);
         });
       });
 
-      return sidebarSections;
+      return orderSections(sidebarSections);
   })
 });

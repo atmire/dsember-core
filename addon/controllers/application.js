@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import SidebarSection from 'dsember-core/utils/sidebar-section';
 
 export default Ember.Controller.extend({
   breadCrumb: Ember.computed('i18n.locale', function() {
@@ -16,55 +17,88 @@ export default Ember.Controller.extend({
   },
 
   sidebarSections: [
-    {
+    SidebarSection.create({
       id: 'my-account',
-      componentName: 'side-bar/simple-section',
       label: 'My Account',
       children: [
-        {
-          componentName: 'side-bar/simple-section-element',
+        SidebarSection.create({
           label: 'Login',
           link: {
             route: 'items.show',
             id: 1
           }
-        },
-        {
-          componentName: 'side-bar/simple-section-element',
+        }),
+        SidebarSection.create({
           label: 'Register',
           link: {
             route: 'items.show',
             id: 2
           }
-        },
-        {
+        }),
+        SidebarSection.create({
           id: 'my-account',
-          componentName: 'side-bar/simple-section',
           label: 'My Account',
           children: [
-            {
-              componentName: 'side-bar/simple-section-element',
+            SidebarSection.create({
               label: 'Login',
               link: {
                 route: 'items.show',
                 id: 1
               }
-            },
-            {
-              componentName: 'side-bar/simple-section-element',
+            }),
+            SidebarSection.create({
               label: 'Register',
               link: {
                 route: 'items.show',
                 id: 2
               }
-            }
-
+            })
           ]
-
-        }
+        })
       ]
 
-    }
+    }),
+    SidebarSection.create({
+      id: 'my-account',
+      label: 'My Account',
+      children: [
+        SidebarSection.create({
+          label: 'Login',
+          link: {
+            route: 'items.show',
+            id: 1
+          }
+        }),
+        SidebarSection.create({
+          label: 'Register',
+          link: {
+            route: 'items.show',
+            id: 2
+          }
+        }),
+        SidebarSection.create({
+          id: 'my-account',
+          label: 'My Account',
+          children: [
+            SidebarSection.create({
+              label: 'Login',
+              link: {
+                route: 'items.show',
+                id: 1
+              }
+            }),
+            SidebarSection.create({
+              label: 'Register',
+              link: {
+                route: 'items.show',
+                id: 2
+              }
+            })
+          ]
+        })
+      ]
+
+    })
   ]
 
 });

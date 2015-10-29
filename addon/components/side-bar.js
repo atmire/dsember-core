@@ -5,7 +5,10 @@ import RouteAwareComponent from '../components/route-aware-component';
 function orderSections(sections) {
   sections.forEach(function(section, index) {
     if (Ember.isBlank(section.get('index'))) {
-      section.set('index', index + 1);
+      //add 1 to switch from 0-based and 0.0001 extra,
+      //so sections with an explicitly set index will
+      //naturally be placed before sections without one.
+      section.set('index', index + 1.0001);
     }
     if (Ember.isPresent(section.get('children'))) {
       section.set('children', orderSections(section.get('children')));

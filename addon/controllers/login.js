@@ -12,10 +12,10 @@ export default Ember.Controller.extend({
       let { identification, password } = this.getProperties('identification', 'password');
       this.get('session').authenticate('authenticator:dspace', identification, password).catch((reason) => {
         if (reason.match(/HTTP Status 403 - Forbidden/)) {
-          this.set('errorMessage', this.get('i18n').t('login.error.403'));
+          this.get('flashMessages').danger(this.get('i18n').t('login.error.403'));
         }
         else {
-          this.set('errorMessage', this.get('i18n').t('login.error.unknown'));
+          this.get('flashMessages').danger(this.get('i18n').t('login.error.unknown'));
         }
       });
     }

@@ -6,6 +6,9 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-9 main-content" {{action "collapseSidebar"}}>
           {{bread-crumb-trail}}
+          {{#each flashMessages.arrangedQueue as |flash|}}
+            {{flash-message flash=flash}}
+          {{/each}}
           {{outlet}}
         </div>
     </div>

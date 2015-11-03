@@ -59,4 +59,5 @@ export default {
   "login.password.placeholder": "Enter your Password",
   "login.submit.button": "Login",
   "login.error.403": "The email address and/or password supplied were not valid.",
+  "login.error.unknown": "Login failed: an unknown error occurred",
 };

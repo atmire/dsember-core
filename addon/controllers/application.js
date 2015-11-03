@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
   //  }
   //}),
 
-  breadCrumb: Ember.computed('i18n.locale', function() {
+  breadCrumb: Ember.computed('i18n.locale', function () {
     return this.get('i18n').t('trail.home');
   }),
 
@@ -28,38 +28,36 @@ export default Ember.Controller.extend({
     }
   },
 
-  sidebarSections: Ember.computed('i18n.locale', 'session.isAuthenticated', function() {
-    let logSection;
+  sidebarSections: Ember.computed('i18n.locale', 'session.isAuthenticated', function () {
+    let children = [];
     if (this.get('session.isAuthenticated')) {
-      logSection = SidebarSection.create({
+      children.push(SidebarSection.create({
         label: this.get('i18n').t('sidebar.my-account.logout'),
         link: {
           action: 'invalidateSession'
         }
-      });
+      }));
     }
     else {
-      logSection = SidebarSection.create({
+      children.push(SidebarSection.create({
         label: this.get('i18n').t('sidebar.my-account.login'),
         link: {
           route: 'login'
         }
-      });
+      }));
+      //children.push(SidebarSection.create({
+      //  label: this.get('i18n').t('sidebar.my-account.register'),
+      //  link: {
+      //    route: 'items.show',
+      //    id: 2
+      //  }
+      //}));
     }
     return [
       SidebarSection.create({
         id: 'my-account',
         label: this.get('i18n').t('sidebar.my-account.head'),
-        children: [
-          logSection,
-          SidebarSection.create({
-            label: this.get('i18n').t('sidebar.my-account.register'),
-            link: {
-              route: 'items.show',
-              id: 2
-            }
-          })
-        ]
+        children: children
       })
     ];
   })

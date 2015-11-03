@@ -58,4 +58,5 @@ export default {
   "login.password.label": "Password",
   "login.password.placeholder": "Enter your Password",
   "login.submit.button": "Login",
+  "login.error.403": "The email address and/or password supplied were not valid.",
 };

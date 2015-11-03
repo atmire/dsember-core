@@ -1,3 +1,6 @@
+{{#if errorMessage}}
+  <div class="alert alert-danger" role="alert">{{errorMessage}}</div>
+{{/if}}
 <form {{action 'authenticate' on='submit'}}>
     <div class="form-group">
         <label for="identification">{{t "login.email.label"}}</label>

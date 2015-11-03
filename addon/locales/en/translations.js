@@ -20,6 +20,7 @@ export default {
 
   "trail.home": "Home",
   "trail.browse": "Browse",
+  "trail.login": "Login",
 
   "pagination.prev": "Previous",
   "pagination.next": "Next",
@@ -45,9 +46,16 @@ export default {
 
   "sidebar.my-account.head": "My Account",
   "sidebar.my-account.login": "Login",
+  "sidebar.my-account.logout": "Logout",
   "sidebar.my-account.register": "Register",
 
   "sidebar.context-collection.head": "This Collection",
   "sidebar.context-collection.home": "Home",
   "sidebar.context-collection.browse": "Browse",
+
+  "login.email.label": "E-mail",
+  "login.email.placeholder": "Enter your e-mail address",
+  "login.password.label": "Password",
+  "login.password.placeholder": "Enter your Password",
+  "login.submit.button": "Login",
 };

@@ -45,7 +45,8 @@
     "ember-cli-htmlbars": "0.7.9",
     "ember-cli-sass": "^5.0.1",
     "ember-i18n": "4.1.4",
-    "ember-i18n-inject": "0.0.1"
+    "ember-i18n-inject": "0.0.1",
+    "ember-simple-auth": "1.0.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

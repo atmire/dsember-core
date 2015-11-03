@@ -32,4 +32,6 @@ export default function(self) {
     path: 'handle/:handle_prefix/:handle_postfix'
   });
 
+  self.route('login');
+
 }

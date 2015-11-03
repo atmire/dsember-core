@@ -1,7 +1,9 @@
 import Ember from 'ember';
 import DS from 'ember-data';
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
-export default DS.RESTAdapter.extend({
+export default DS.RESTAdapter.extend(DataAdapterMixin, {
+  authorizer: 'authorizer:dspace',
   namespace: 'rest',
   //coalesceFindRequests: true, -> commented out, because it only works for some endpoints (e.g. items) and not others (e.g. communities)
   ajax(url, type, hash) {

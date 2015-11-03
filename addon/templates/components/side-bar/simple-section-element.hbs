@@ -1,5 +1,11 @@
-{{#if model.link}}
-  {{link-to model.label model.link.route model.link.id}}
+{{#if hasValidLink}}
+  {{#if hasAction}}
+    <a>{{model.label}}</a>
+  {{else if hasId}}
+    {{link-to model.label model.link.route model.link.id}}
+  {{else}}
+    {{link-to model.label model.link.route}}
+  {{/if}}
 {{else}}
   <span>{{model.label}}</span>
 {{/if}}

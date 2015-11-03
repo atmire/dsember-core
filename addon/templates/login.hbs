@@ -1,0 +1,11 @@
+<form {{action 'authenticate' on='submit'}}>
+    <div class="form-group">
+        <label for="identification">{{t "login.email.label"}}</label>
+      {{input type="email" value=identification placeholder=(t "login.email.placeholder") class='form-control'}}
+    </div>
+    <div class="form-group">
+        <label for="password">{{t "login.password.label"}}</label>
+      {{input value=password placeholder=(t "login.password.placeholder") class='form-control' type='password'}}
+    </div>
+    <button type="submit" class="btn btn-default" {{action 'authenticate'}}>{{t "login.submit.button"}}</button>
+</form>

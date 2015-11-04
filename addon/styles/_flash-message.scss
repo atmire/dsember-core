@@ -1,9 +1,18 @@
-$notification-spacing:                     2px !default;
-$notification-max-height:                  800px !default;
+$notification-spacing: 2px !default;
+$notification-max-height: 800px !default;
+$flash-message-zindex: $zindex-modal;
+$flash-message-container-padding: $grid-gutter-width/2;
+
+.main-content {
+  position: relative;
+}
 
 .flash-message-container {
   position: absolute;
-  z-index: $zindex-modal;
+  z-index: $flash-message-zindex;
+  width: 100%;
+  padding-left: $flash-message-container-padding;
+  padding-right: $flash-message-container-padding;
   left: 0;
   right: 0;
 }

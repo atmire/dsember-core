@@ -75,6 +75,7 @@
   #main-container.opened {
     .row-offcanvas-right {
 
+      .flash-message-container,
       .main-content {
         padding-right: $grid-gutter-width;
       }
@@ -88,6 +89,7 @@
 
     .row-offcanvas-left {
 
+      .flash-message-container,
       .main-content {
         padding-left: $grid-gutter-width;
       }

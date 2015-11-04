@@ -1,8 +1,16 @@
 $notification-spacing:                     2px !default;
 $notification-max-height:                  800px !default;
 
+.flash-message-container {
+  position: fixed;
+  z-index: $zindex-modal;
+  left: 0;
+  right: 0;
+}
+
 .flash-message {
   cursor: pointer;
+  @include box-shadow(0 3px 9px rgba(0,0,0,.1));
 
   &.active {
     animation: notification-show 180ms cubic-bezier(.175, .885, .32, 1.27499);

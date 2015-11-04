@@ -10,7 +10,9 @@ export default Ember.Controller.extend({
   actions: {
     authenticate() {
       let { identification, password } = this.getProperties('identification', 'password');
-      this.get('session').authenticate('authenticator:dspace', identification, password).catch((reason) => {
+      this.get('session').authenticate('authenticator:dspace', identification, password).then(() => {
+        this.get('flashMessages').success(this.get('i18n').t('login.success'));
+      }).catch((reason) => {
         if (reason.match(/HTTP Status 403 - Forbidden/)) {
           this.get('flashMessages').danger(this.get('i18n').t('login.error.403'));
         }

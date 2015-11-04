@@ -41,7 +41,6 @@ export default BaseAuthenticator.extend({
   },
 
   invalidate: function() {
-    console.log('invalidate...');
     return Ember.RSVP.resolve();
   }
 });

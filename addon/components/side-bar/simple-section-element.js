@@ -16,7 +16,10 @@ export default Ember.Component.extend({
       // but haven't found a good way of ensuring variable actions bubble
       // up through nested components
       this.container.lookup('controller:application').send(this.get('model.link.action'));
-      return true;
     }
+    if (this.get('hasRouteOrAction')) {
+      this.container.lookup('controller:application').send('collapseSidebar');
+    }
+    return false;
   }
 });

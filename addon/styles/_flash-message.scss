@@ -2,7 +2,7 @@ $notification-spacing:                     2px !default;
 $notification-max-height:                  800px !default;
 
 .flash-message-container {
-  position: fixed;
+  position: absolute;
   z-index: $zindex-modal;
   left: 0;
   right: 0;

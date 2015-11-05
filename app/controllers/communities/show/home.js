@@ -1,1 +1,0 @@
-export { default } from 'dsember-core/controllers/communities/show/home';

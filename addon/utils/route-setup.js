@@ -26,6 +26,7 @@ export default function(self) {
     this.route('item', {
       path: ':item_id'
     }, function() {
+      this.route('full', { path: '/' });
       this.route('edit');
     });
   });

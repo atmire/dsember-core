@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
     }
   })),
 
-  breadCrumbs: Ember.computed('model', 'parents.[]', function() {
+  breadCrumbs: Ember.computed('model.name', 'parents.[]', function() {
     let result = [];
     if (this.get('parents').length > 0) {
       // the slice is here to make a copy of the array before it gets reversed,

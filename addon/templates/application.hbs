@@ -4,7 +4,7 @@
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
             {{side-bar}}
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-9 main-content" {{action "collapseSidebar"}}>
+        <div class="col-xs-12 col-sm-12 col-md-9 main-content" {{action "collapseSidebar" preventDefault=false}}>
           {{partial "partials/flash-messages"}}
           {{bread-crumb-trail}}
           {{outlet}}

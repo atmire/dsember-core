@@ -10,7 +10,7 @@ export default DSpaceObject.extend({
   parentCollectionId: DS.attr('number'),
   parentCollectionList: DS.hasMany('collection', { async: true }),
   parentCommunityList: DS.hasMany('community', { async: true }),
-  metadata: DS.hasMany('metadatum'),
+  metadata: DS.hasMany('metadatum', {inverse: 'dspaceObject'}),
 
   parentId: Ember.computed.alias('parentCollectionId'),
   parentType: 'collection',

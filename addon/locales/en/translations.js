@@ -25,9 +25,18 @@ export default {
   "pagination.prev": "Previous",
   "pagination.next": "Next",
 
-  "item.detailed.key": "Key",
+  "item.detailed.key": "Field",
   "item.detailed.value": "Value",
   "item.detailed.language": "Lang",
+
+  "item.edit.remove": "Remove",
+  "item.edit.key": "Field",
+  "item.edit.value": "Value",
+  "item.edit.language": "Lang",
+  "item.edit.cancel": "Cancel",
+  "item.edit.update": "Update",
+  "item.edit.success": "Item updated successfully!.",
+  "item.edit.error.unknown": "The item could not be updated.",
 
   "item.detailed.collections.head": "This item appears in the following Collection(s)",
 
@@ -54,6 +63,7 @@ export default {
   "sidebar.context-collection.browse": "Browse",
 
   "sidebar.context-item.head": "This Item",
+  "sidebar.context-item.view": "View",
   "sidebar.context-item.edit": "Edit",
 
   "login.email.label": "E-mail",

@@ -5,7 +5,7 @@ export default function(self) {
   self.route('index', { path: '/' });
 
   self.route('communities', function() {
-    this.route('show', {
+    this.route('community', {
       path: ':community_id'
     }, function() {
       this.route('home', { path: '/' });
@@ -13,7 +13,7 @@ export default function(self) {
   });
 
   self.route('collections', function() {
-    this.route('show', {
+    this.route('collection', {
       path: ':collection_id'
     }, function() {
       this.route('home', { path: '/' });
@@ -23,8 +23,10 @@ export default function(self) {
   });
 
   self.route('items', function() {
-    this.route('show', {
+    this.route('item', {
       path: ':item_id'
+    }, function() {
+      this.route('edit');
     });
   });
 

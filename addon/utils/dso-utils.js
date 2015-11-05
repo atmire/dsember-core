@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 function getShowRouteForDSOType(type) {
-  return `${Ember.Inflector.inflector.pluralize(type)}.show`;
+  return `${Ember.Inflector.inflector.pluralize(type)}.${type}`;
 }
 
 function fillParentsArray(store, dso, parentsArray) {

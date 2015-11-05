@@ -53,6 +53,9 @@ export default {
   "sidebar.context-collection.home": "Home",
   "sidebar.context-collection.browse": "Browse",
 
+  "sidebar.context-item.head": "This Item",
+  "sidebar.context-item.edit": "Edit",
+
   "login.email.label": "E-mail",
   "login.email.placeholder": "Enter your e-mail address",
   "login.password.label": "Password",

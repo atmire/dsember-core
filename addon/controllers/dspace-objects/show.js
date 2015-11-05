@@ -18,7 +18,9 @@ export default Ember.Controller.extend({
   breadCrumbs: Ember.computed('model', 'parents.[]', function() {
     let result = [];
     if (this.get('parents').length > 0) {
-      this.get('parents').reverse().forEach(function(parent) {
+      // the slice is here to make a copy of the array before it gets reversed,
+      // reverse() will modify the original
+      this.get('parents').slice().reverse().forEach(function(parent) {
         result.push({
           label: parent.get('name'),
           path: getShowRouteForDSOType(parent.get('type')),

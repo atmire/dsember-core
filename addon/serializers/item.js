@@ -15,5 +15,16 @@ export default DS.JSONSerializer.extend(DS.EmbeddedRecordsMixin, {
       hash.parentCollection = undefined;
     }
     return this._super.apply(this, arguments);
+  },
+  serialize: function(snapshot, options) {
+    let json = snapshot.hasMany('metadata').map(function(metadatum) {
+      return {
+        key: metadatum.attr('key'),
+        value: metadatum.attr('value'),
+        language: metadatum.attr('language')
+      }
+    });
+
+    return json;
   }
 });

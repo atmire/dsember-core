@@ -13,7 +13,9 @@ export default DS.RESTAdapter.extend(DataAdapterMixin, {
     if (Ember.isEmpty(hash.data)) {
       hash.data = {};
     }
-    hash.data.expand = 'all'; //add ?expand=all to all rest calls
+    if (type === "GET") {
+      hash.data.expand = 'all'; //add ?expand=all to all GET calls
+    }
     return this._super(url, type, hash);
   }
 });

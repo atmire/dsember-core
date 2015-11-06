@@ -1,17 +1,6 @@
-<table class="table table-striped table-hover">
-    <thead>
-    <tr>
-        <th>{{t "item.edit.remove"}}</th>
-        <th>{{t "item.edit.key"}}</th>
-        <th>{{t "item.edit.value"}}</th>
-        <th>{{t "item.edit.language"}}</th>
-    </tr>
-    </thead>
-    <tbody>
-    {{#each proxiedMetadata as |metadatum|}}
-      {{items/edit/item-metadatum-edit-row metadatum=metadatum}}
-    {{/each}}
-    </tbody>
-</table>
+<h2>{{t 'item.edit.add.head'}}</h2>
+{{items/edit/item-add-metadata onSubmit=(action 'add' model)}}
+<h2>{{t 'item.edit.head'}}</h2>
+{{items/edit/item-metadata-edit-table metadata=proxiedMetadata}}
 <button class="btn btn-default" {{action "cancel" model}}>{{t "item.edit.cancel"}}</button>
 <button class="btn btn-default" {{action "update" model}}>{{t "item.edit.update"}}</button>

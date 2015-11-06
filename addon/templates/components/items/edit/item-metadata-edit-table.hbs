@@ -1,0 +1,13 @@
+<thead>
+<tr>
+    <th>{{t "item.edit.remove"}}</th>
+    <th>{{t "item.edit.key"}}</th>
+    <th>{{t "item.edit.value"}}</th>
+    <th>{{t "item.edit.language.short"}}</th>
+</tr>
+</thead>
+<tbody>
+{{#each metadata as |metadatum|}}
+  {{items/edit/item-metadatum-edit-row metadatum=metadatum}}
+{{/each}}
+</tbody>

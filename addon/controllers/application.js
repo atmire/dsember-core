@@ -4,12 +4,6 @@ import SidebarSection from 'dsember-core/utils/sidebar-section';
 export default Ember.Controller.extend({
   isSidebarCollapsed: true,
   session: Ember.inject.service('session'),
-  //session: Ember.Object.create({
-  //  isAuthenticated: true,
-  //  invalidate: function() {
-  //    this.set('isAuthenticated', false)
-  //  }
-  //}),
 
   breadCrumb: Ember.computed('i18n.locale', function () {
     return this.get('i18n').t('trail.home');

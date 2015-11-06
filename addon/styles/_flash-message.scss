@@ -8,13 +8,13 @@ $flash-message-container-padding: $grid-gutter-width/2;
 }
 
 .flash-message-container {
-  position: absolute;
+  position: fixed;
   z-index: $flash-message-zindex;
-  width: 100%;
   padding-left: $flash-message-container-padding;
   padding-right: $flash-message-container-padding;
   left: 0;
   right: 0;
+  overflow-x: hidden;
 }
 
 .flash-message {

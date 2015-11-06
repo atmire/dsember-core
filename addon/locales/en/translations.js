@@ -21,6 +21,7 @@ export default {
   "trail.home": "Home",
   "trail.browse": "Browse",
   "trail.login": "Login",
+  "trail.edit": "Edit",
 
   "pagination.prev": "Previous",
   "pagination.next": "Next",
@@ -29,14 +30,20 @@ export default {
   "item.detailed.value": "Value",
   "item.detailed.language": "Lang",
 
+  "item.edit.head": "Edit existing fields",
   "item.edit.remove": "Remove",
   "item.edit.key": "Field",
   "item.edit.value": "Value",
-  "item.edit.language": "Lang",
+  "item.edit.language": "Language",
+  "item.edit.language.short": "Lang",
+  "item.edit.add.head": "Add a new field",
+  "item.edit.add": "Add",
   "item.edit.cancel": "Cancel",
   "item.edit.update": "Update",
-  "item.edit.success": "Item updated successfully!.",
+  "item.edit.success": "Item updated successfully.",
   "item.edit.error.unknown": "The item could not be updated.",
+  "item.edit.field-added": "The field was added.",
+  "item.edit.confirm-exit": "You have unsaved changes, are you sure you want to leave?",
 
   "item.detailed.collections.head": "This item appears in the following Collection(s)",
 

@@ -10,6 +10,9 @@ export default Ember.Controller.extend({
 
   proxiedFieldsFlaggedForRemoval: Ember.computed.filterBy('proxiedMetadata', 'flaggedForRemoval', true),
 
+  dirtyMetadata: Ember.computed.filterBy('model.metadata', 'isDirty'),
+  hasUnsavedChanges: Ember.computed.notEmpty('dirtyMetadata'),
+
   actions: {
     update(model) {
       let fieldIDsFlaggedForRemoval = this.get('proxiedFieldsFlaggedForRemoval').mapBy('id');
@@ -18,6 +21,18 @@ export default Ember.Controller.extend({
       });
       model.set('metadata', remainingFields);
       return true; //save happens in the route
+    },
+    add(model, key, value, lang) {
+      //need send because component actions don't bubble automatically
+      this.send('addMetadatum', model, key, value, lang);
     }
-  }
+  },
+
+  breadCrumbs: Ember.computed('model', 'i18n.locale', function(){
+    return [{
+      label: this.get('i18n').t('trail.edit'),
+      path: 'items.item.edit',
+      model: this.get('model')
+    }]
+  })
 });

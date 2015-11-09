@@ -1,0 +1,78 @@
+$loading-rect-width: 0.6em;
+$loading-rect-height: 1.8em;
+$loading-rect-spacing: 1.2em;
+$loading-loop-duration: 1200ms;
+$loading-step-duration: 150ms;
+
+.loading-pane {
+  text-align: center;
+  padding: 50px;
+}
+
+@-moz-keyframes loader {
+  0% {
+    background: $gray-lighter;
+  }
+  10% {
+    background: $mirage-blue;
+  }
+  40% {
+    background: $gray-lighter;
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    background: $gray-lighter;
+  }
+  10% {
+    background: $mirage-blue;
+  }
+  40% {
+    background: $gray-lighter;
+  }
+}
+@keyframes loader {
+  0% {
+    background: $gray-lighter;
+  }
+  10% {
+    background: $mirage-blue;
+  }
+  40% {
+    background: $gray-lighter;
+  }
+}
+/* :not(:required) hides these rules from IE9 and below */
+.loader:not(:required) {
+  -moz-animation: loader $loading-loop-duration $loading-step-duration infinite ease-out;
+  -webkit-animation: loader $loading-loop-duration $loading-step-duration infinite ease-out;
+  animation: loader $loading-loop-duration $loading-step-duration infinite ease-out;
+  background: $gray-lighter;
+  display: inline-block;
+  position: relative;
+  text-indent: -9999px;
+  width: $loading-rect-width;
+  height: $loading-rect-height;
+  margin: 0 $loading-rect-spacing;
+}
+.loader:not(:required):before, .loader:not(:required):after {
+  background: $gray-lighter;
+  content: '\x200B';
+  display: inline-block;
+  width: $loading-rect-width;
+  height: $loading-rect-height;
+  position: absolute;
+  top: 0;
+}
+.loader:not(:required):before {
+  -moz-animation: loader $loading-loop-duration 0ms infinite ease-out;
+  -webkit-animation: loader $loading-loop-duration 0ms infinite ease-out;
+  animation: loader $loading-loop-duration 0ms infinite ease-out;
+  left: -$loading-rect-spacing;
+}
+.loader:not(:required):after {
+  -moz-animation: loader $loading-loop-duration ($loading-step-duration * 2) infinite ease-out;
+  -webkit-animation: loader $loading-loop-duration ($loading-step-duration * 2) infinite ease-out;
+  animation: loader $loading-loop-duration ($loading-step-duration * 2) infinite ease-out;
+  right: -$loading-rect-spacing;
+}

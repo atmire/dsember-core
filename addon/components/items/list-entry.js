@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../../templates/components/items/list-entry';
-import { chainableFindBy } from 'dsember-core/utils/array-utils'
+import { chainableFindBy } from 'dsember-core/utils/array-utils';
 
 export default Ember.Component.extend({
   layout: layout,
@@ -12,7 +12,7 @@ export default Ember.Component.extend({
   // thrown away and recreated, because that's how
   // it works in DSpace
   title: Ember.computed('item.metadata.[]', function() {
-    return chainableFindBy(this.get('item.metadata'), 'key', 'dc.title').get('value')
+    return chainableFindBy(this.get('item.metadata'), 'key', 'dc.title').get('value');
   }),
   author: Ember.computed('item.metadata.[]', function() {
     let authors = this.get('item.metadata').filterBy('key', 'dc.contributor.author').mapBy('value');
@@ -20,9 +20,9 @@ export default Ember.Component.extend({
     return authors.concat(creators).uniq().join('; ');
   }),
   date: Ember.computed('item.metadata.[]', function() {
-    return chainableFindBy(this.get('item.metadata'), 'key', 'dc.date.issued').get('value')
+    return chainableFindBy(this.get('item.metadata'), 'key', 'dc.date.issued').get('value');
   }),
   abstract: Ember.computed('item.metadata.[]', function() {
-    return chainableFindBy(this.get('item.metadata'), 'key', 'dc.description.abstract').get('value')
+    return chainableFindBy(this.get('item.metadata'), 'key', 'dc.description.abstract').get('value');
   })
 });

@@ -1,5 +1,4 @@
-import DS from 'ember-data';
-import ApplicationAdapter from 'dsember-core/adapters/application'
+import ApplicationAdapter from 'dsember-core/adapters/application';
 
 export default ApplicationAdapter.extend({
   updateRecord: function(store, type, snapshot) {

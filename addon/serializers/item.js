@@ -16,15 +16,13 @@ export default DS.JSONSerializer.extend(DS.EmbeddedRecordsMixin, {
     }
     return this._super.apply(this, arguments);
   },
-  serialize: function(snapshot, options) {
-    let json = snapshot.hasMany('metadata').map(function(metadatum) {
+  serialize: function(snapshot) {
+    return snapshot.hasMany('metadata').map(function (metadatum) {
       return {
         key: metadatum.attr('key'),
         value: metadatum.attr('value'),
         language: metadatum.attr('language')
-      }
+      };
     });
-
-    return json;
   }
 });

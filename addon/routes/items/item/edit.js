@@ -26,7 +26,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       return false;
     },
     update(model) {
-      model.save().then((values) => {
+      model.save().then(() => {
         this.get('flashMessages').success(this.get('i18n').t('item.edit.success'));
       }, (error) => {
         // the REST API returns 200, without any json, but ember expects a json representation
@@ -34,7 +34,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         if (error.name === "SyntaxError") {
           let model = this.modelFor('items.item');
           model.rollbackAttributes();
-          model.reload().then((model) => {
+          model.reload().then(() => {
             this.get('flashMessages').success(this.get('i18n').t('item.edit.success'));
           });
         }

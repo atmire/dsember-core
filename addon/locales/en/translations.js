@@ -81,4 +81,8 @@ export default {
   "login.success": "Logged in successfully!",
   "login.error.403": "The email address and/or password supplied were not valid.",
   "login.error.unknown": "Login failed: an unknown error occurred",
+
+  "404.page-not-found": "page not found",
+  "404.help": "We can't find the page you're looking for. The page may have been moved or deleted. You can use the button below to get back to the home page. ",
+  "404.link.home-page": "Take me to the home page",
 };

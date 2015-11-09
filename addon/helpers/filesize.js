@@ -5,16 +5,16 @@ export function filesize([value]) {
     return null;
   }
   let i,
-    filesize,
+    size,
     units = ['B', 'KiB', 'MiB', 'GiB', 'TiB'];
   for (i = 0; i < units.length; i++) {
     if (value < 1024) {
-      filesize = Math.floor(value) + units[i];
+      size = Math.floor(value) + units[i];
       break;
     }
     value = value / 1024;
   }
-  return filesize;
+  return size;
 }
 
 export default Ember.Helper.helper(filesize);

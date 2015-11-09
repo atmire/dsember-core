@@ -33,6 +33,6 @@ export default Ember.Controller.extend({
       label: this.get('i18n').t('trail.edit'),
       path: 'items.item.edit',
       model: this.get('model')
-    }]
+    }];
   })
 });

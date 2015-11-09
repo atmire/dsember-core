@@ -1,7 +1,7 @@
 <form {{action 'submitAction' on='submit'}}>
     <fieldset>
         <div class="form-group">
-            <label for="dcFieldSelect">{{t 'item.edit.key'}}:</label>
+            <label for="dcFieldSelect">{{t 'item.edit.metadata.key'}}:</label>
           {{#x-select value=fieldToAdd id="dcFieldSelect" class="form-control"}}
             {{#each dcFields as |field|}}
               {{#x-option value=field}}{{field}}{{/x-option}}
@@ -11,17 +11,17 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label for="dcValueTextbox">{{t 'item.edit.value'}}:</label>
+                    <label for="dcValueTextbox">{{t 'item.edit.metadata.value'}}:</label>
                   {{textarea value=valueToAdd id="dcValueTextbox" rows="4"  class="form-control" }}
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label for="dcLanguageInput">{{t 'item.edit.language'}}:</label>
+                    <label for="dcLanguageInput">{{t 'item.edit.metadata.language'}}:</label>
                   {{input value=languageToAdd id="dcLanguageInput" class="form-control" }}
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-default">{{t 'item.edit.add'}}</button>
+        <button type="submit" class="btn btn-default">{{t 'item.edit.metadata.add'}}</button>
     </fieldset>
 </form>

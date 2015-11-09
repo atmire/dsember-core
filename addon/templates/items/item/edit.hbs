@@ -1,6 +1,13 @@
-<h2>{{t 'item.edit.add.head'}}</h2>
-{{items/edit/item-add-metadata onSubmit=(action 'add' model)}}
-<h2>{{t 'item.edit.head'}}</h2>
-{{items/edit/item-metadata-edit-table metadata=proxiedMetadata}}
-<button class="btn btn-default" {{action "cancel" model}}>{{t "item.edit.cancel"}}</button>
-<button class="btn btn-default" {{action "update" model}}>{{t "item.edit.update"}}</button>
+<ul class="nav nav-tabs">
+  {{#link-to 'items.item.edit.metadata' tagName='li' role="presentation"}}
+      <a href="#">{{t 'item.edit.tab.metadata'}}</a>
+  {{/link-to}}
+  {{#link-to 'items.item.edit.bitstreams' tagName='li' role="presentation"}}
+      <a href="#">{{t 'item.edit.tab.bitstreams'}}</a>
+  {{/link-to}}
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active">
+      {{outlet}}
+    </div>
+</div>

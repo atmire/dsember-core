@@ -1,0 +1,6 @@
+<h2>{{t 'item.edit.metadata.add.head'}}</h2>
+{{items/edit/item-add-metadata onSubmit=(action 'add' model)}}
+<h2>{{t 'item.edit.metadata.head'}}</h2>
+{{items/edit/item-metadata-edit-table metadata=proxiedMetadata}}
+<button class="btn btn-default" {{action "cancel" model}}>{{t "item.edit.metadata.cancel"}}</button>
+<button class="btn btn-default" {{action "update" model}}>{{t "item.edit.metadata.update"}}</button>

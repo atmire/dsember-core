@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  titleToken: function() {
+    return  this.get('i18n').t('title.browse');
+  },
+
   offset: 0,
   limit: 5,
   queryParams: {

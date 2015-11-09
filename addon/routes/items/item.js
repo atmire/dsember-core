@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import DSORoute from 'dsember-core/routes/dspace-object';
 
-export default Ember.Route.extend({
+export default DSORoute.extend({
 });

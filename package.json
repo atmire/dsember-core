@@ -48,7 +48,8 @@
     "ember-i18n-inject": "0.0.1",
     "ember-simple-auth": "1.0.1",
     "ember-try": "0.0.6",
-    "emberx-select": "2.0.2"
+    "emberx-select": "2.0.2",
+    "ember-cli-document-title": "0.2.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

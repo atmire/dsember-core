@@ -27,7 +27,10 @@ export default function(self) {
       path: ':item_id'
     }, function() {
       this.route('full', { path: '/' });
-      this.route('edit');
+      this.route('edit', function() {
+        this.route('metadata');
+        this.route('bitstreams');
+      });
     });
   });
 

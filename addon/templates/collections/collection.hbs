@@ -1,10 +1,10 @@
 <h1 class="page-header">{{model.name}}</h1>
 <ul class="nav nav-tabs">
   {{#link-to 'collections.collection.home' tagName='li' role="presentation"}}
-      <a href="#">Home</a>
+      <a href="#">{{t 'collection.tab.home'}}</a>
   {{/link-to}}
   {{#link-to 'collections.collection.items' tagName='li' role="presentation"}}
-      <a href="#">Browse</a>
+      <a href="#">{{t 'collection.tab.browse'}}</a>
   {{/link-to}}
 </ul>
 <div class="tab-content">

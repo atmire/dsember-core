@@ -34,6 +34,14 @@ export default function(self) {
     });
   });
 
+  self.route('bitstreams', function() {
+    this.route('bitstream', {
+      path: ':bitstream_id'
+    }, function() {
+      this.route('edit');
+    });
+  });
+
   self.route('handle', {
     path: 'handle/:handle_prefix/:handle_postfix'
   });

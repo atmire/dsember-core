@@ -1,0 +1,17 @@
+<thead>
+<tr>
+    <th>{{t "item.edit.bitstreams.head.delete"}}</th>
+    <th>{{t "item.edit.bitstreams.head.name"}}</th>
+    <th>{{t "item.edit.bitstreams.head.description"}}</th>
+    <th>{{t "item.edit.bitstreams.head.format"}}</th>
+    <th>{{t "item.edit.bitstreams.head.edit"}}</th>
+</tr>
+</thead>
+<tbody>
+{{#each bundles as |bundle|}}
+    <tr class="active"><th colspan="5">{{t "item.edit.bitstreams.head.bundle" bundleName=bundle.name}}</th></tr>
+    {{#each bundle.bitstreams as |bitstream|}}
+      {{items/edit/item-bitstream-edit-row bitstream=bitstream}}
+    {{/each}}
+{{/each}}
+</tbody>

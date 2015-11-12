@@ -27,6 +27,7 @@ export default {
   "trail.edit": "Edit",
   "trail.edit.metadata": "Metadata",
   "trail.edit.bitstreams": "Bitstreams",
+  "trail.404": "404",
 
   "title.prefix": "dsember",
   "title.home": "Home",
@@ -59,6 +60,19 @@ export default {
   "item.edit.metadata.field-added": "The field was added.",
   "item.edit.metadata.confirm-exit": "You have unsaved changes, are you sure you want to leave?",
 
+  "item.edit.bitstreams.head.delete": "Remove",
+  "item.edit.bitstreams.head.name": "Name",
+  "item.edit.bitstreams.head.description": "Description",
+  "item.edit.bitstreams.head.format": "Format",
+  "item.edit.bitstreams.head.edit": "Edit",
+  "item.edit.bitstreams.view": "View",
+  "item.edit.bitstreams.edit": "Edit",
+  "item.edit.bitstreams.head.bundle": "Bundle: {{bundleName}}",
+  "item.edit.bitstreams.cancel": "Cancel",
+  "item.edit.bitstreams.delete": "Remove selected bitstream(s)",
+  "item.edit.bitstreams.remove.success": "Bitstream(s) removed successfully!",
+  "item.edit.bitstreams.remove.error": "An error occurred while trying to remove the selected bitstream(s)!",
+
   "item.detailed.collections.head": "This item appears in the following Collection(s)",
 
   "bitstream.detailed.file-section.head": "Files in this item",
@@ -66,6 +80,21 @@ export default {
   "bitstream.detailed.file-section.size": "Size",
   "bitstream.detailed.file-section.format": "Format",
   "bitstream.detailed.file-section.view-open": "View/<wbr>Open",
+
+  "bitstream.edit.parent": "Parent",
+  "bitstream.edit.file": "File",
+  "bitstream.edit.filename": "Filename",
+  "bitstream.edit.description": "Description",
+  "bitstream.edit.format": "Format",
+  "bitstream.edit.replace": "Replace file",
+  "bitstream.edit.replace.help": "Upload a new file to replace the current one.",
+  "bitstream.edit.save": "Save",
+  "bitstream.edit.cancel": "Cancel",
+  "bitstream.edit.error.unknown": "The Bitstream could not be updated.",
+  "bitstream.edit.metadata.success": "Bitstream metadata updated successfully.",
+  "bitstream.edit.replace.success": "File replaced successfully.",
+  "bitstream.edit.replace.error": "The file could not be replaced.",
+  "bitstream.edit.confirm-exit": "You have unsaved changes, are you sure you want to leave?",
 
   "thumbnail.alt": "Thumbnail",
   "thumbnail.not-found.alt": "No Thumbnail",
@@ -92,7 +121,7 @@ export default {
   "login.password.label": "Password",
   "login.password.placeholder": "Enter your Password",
   "login.submit.button": "Login",
-  "login.success": "Logged in successfully!",
+  "login.success": "Logged in successfully.",
   "login.error.403": "The email address and/or password supplied were not valid.",
   "login.error.unknown": "Login failed: an unknown error occurred",
 

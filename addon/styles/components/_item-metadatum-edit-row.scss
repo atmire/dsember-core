@@ -2,6 +2,6 @@
   .metadatum-key,
   .metadatum-value,
   .metadatum-language {
-    opacity: 0.5;
+    opacity: $flagged-for-removal-opacity;
   }
 }

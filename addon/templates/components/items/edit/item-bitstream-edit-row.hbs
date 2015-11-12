@@ -1,0 +1,7 @@
+<td>{{input type="checkbox" checked=bitstream.flaggedForRemoval class="toggle"}}</td>
+<td class="bitstream-name">{{bitstream.name}}</td>
+<td class="bitstream-description">{{bitstream.description}}</td>
+<td class="bitstream-format">{{bitstream.format}}</td>
+<td class="bitstream-actions">
+  {{#link-to 'bitstreams.bitstream.edit' bitstream disabled=bitstream.flaggedForRemoval}}{{t "item.edit.bitstreams.edit"}}{{/link-to}}
+</td>

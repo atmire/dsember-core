@@ -2,7 +2,11 @@ import Ember from 'ember';
 import BaseAuthenticator from 'ember-simple-auth/authenticators/base';
 
 export default BaseAuthenticator.extend({
-  tokenEndpoint: '/rest/login', //TODO get '/rest' from adapter
+  store: Ember.inject.service('store'),
+  tokenEndpoint: Ember.computed('store', function() {
+    let namespace = this.get('store').adapterFor('application').get('namespace');
+    return `${namespace}/login`;
+  }),
 
   restore: function(data) {
     return new Ember.RSVP.Promise(function(resolve, reject) {
@@ -17,7 +21,7 @@ export default BaseAuthenticator.extend({
   authenticate: function(identification, password) {
     return new Ember.RSVP.Promise((resolve, reject) => {
       Ember.$.ajax({
-        url: this.tokenEndpoint,
+        url: this.get('tokenEndpoint'),
         type: 'POST',
         data: JSON.stringify({
           email: identification,

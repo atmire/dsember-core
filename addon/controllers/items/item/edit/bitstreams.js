@@ -5,12 +5,22 @@ export default Ember.Controller.extend({
     return this.get('model.bitstreams').getEach('bundleName').uniq();
   }),
 
-  bitstreamsGroupedByBundle: Ember.computed('bundleNames', 'model.bitstreams.@each.bundleName', function () {
+  //TODO refactor with proxiedMetadata in the metadata tab
+  proxiedBitstreams: Ember.computed.map('model.bitstreams', function(bitstream) {
+    return Ember.ObjectProxy.create({
+      content: bitstream,
+      flaggedForRemoval: false
+    });
+  }),
+
+  proxiedBitstreamsFlaggedForRemoval: Ember.computed.filterBy('proxiedBitstreams', 'flaggedForRemoval', true),
+
+  bitstreamsGroupedByBundle: Ember.computed('bundleNames', 'proxiedBitstreams.@each.bundleName', function () {
     let result = [];
     this.get('bundleNames').forEach((bundleName) => {
       let group = Ember.Object.create({
         name: bundleName,
-        bitstreams: this.get('model.bitstreams').filterBy('bundleName', bundleName)
+        bitstreams: this.get('proxiedBitstreams').filterBy('bundleName', bundleName)
       });
       result.push(group);
     });

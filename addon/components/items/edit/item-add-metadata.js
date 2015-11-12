@@ -4,13 +4,13 @@ import layout from '../../../templates/components/items/edit/item-add-metadata';
 export default Ember.Component.extend({
   layout: layout,
 
-  initProperties: function() {
+  initProperties: Ember.on('init', function() {
     this.setProperties({
-      fieldToAdd: 'dc.contributor.advisor',
+      fieldToAdd: 'dc.contributor.author',
       valueToAdd: '',
       languageToAdd: ''
     });
-  }.on('init'),
+  }),
 
   actions: {
     submitAction() {

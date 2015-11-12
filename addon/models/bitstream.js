@@ -13,5 +13,9 @@ export default DSpaceObject.extend({
   parentObject: DS.belongsTo('dspace-object', { async: true }),
   policies: DS.hasMany('policy'),
   //checksum: leaving out for now
-  parent: Ember.computed.alias('parentObject')
+  parent: Ember.computed.alias('parentObject'),
+
+  parentId: Ember.computed.alias('parent.id'),
+  parentType: 'item'
+
 });

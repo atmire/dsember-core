@@ -1,0 +1,1 @@
+export { default } from 'dsember-core/components/items/edit/item-bitstreams-edit-table';

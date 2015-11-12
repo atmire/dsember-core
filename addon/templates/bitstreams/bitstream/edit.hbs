@@ -1,0 +1,38 @@
+{{#if model.parentObject.name}}
+    <div class="form-group">
+        <label for="bitstream-parent">{{t 'bitstream.edit.parent'}}:</label>
+        <div>{{link-to model.parentObject.name parentRoute model.parentObject id="bitstream-parent"}}</div>
+    </div>
+{{/if}}
+{{#if originalLink}}
+    <div class="form-group">
+        <label for="bitstream-download">{{t 'bitstream.edit.file'}}:</label>
+        <div><a href="{{originalLink}}" download="{{model.name}}" id="bitstream-download">{{model.name}}</a></div>
+    </div>
+{{/if}}
+<div class="form-group">
+    <label for="bitstream-filename">{{t 'bitstream.edit.filename'}}:</label>
+  {{input value=model.name type="text" class="form-control" id="bitstream-filename" placeholder=(t 'bitstream.edit.filename')}}
+</div>
+<div class="form-group">
+    <label for="bitstream-description">{{t 'bitstream.edit.description'}}:</label>
+  {{input value=model.description type="text" class="form-control" id="bitstream-description" placeholder=(t 'bitstream.edit.description')}}
+</div>
+<div class="form-group">
+    <label for="bitstream-format">{{t 'bitstream.edit.format'}}:</label>
+    {{#x-select value=model.format id="bitstream-format" class="form-control"}}
+      {{#each formats as |format|}}
+        {{#x-option value=format.value}}{{format.label}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
+    <p class="help-block">Due to an issue with the REST API, a change in the format won't be persisted to the server</p>
+</div>
+<div class="form-group">
+    <label for="bitstream-replace">{{t 'bitstream.edit.replace'}}:</label>
+    {{#if fileInputVisible}}
+      {{file-input id="bitstream-replace" onChange="replaceFile"}}
+    {{/if}}
+    <p class="help-block">{{t "bitstream.edit.replace.help"}}</p>
+</div>
+<button class="btn btn-default" {{action "cancel" parentRoute model.parentId}}>{{t "bitstream.edit.cancel"}}</button>
+<button class="btn btn-default" {{action "save" model}} >{{t "bitstream.edit.save"}}</button>

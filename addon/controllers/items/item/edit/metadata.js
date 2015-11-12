@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  //TODO refactor with proxiedBitstreams in the bitstreams tab
   proxiedMetadata: Ember.computed.map('model.metadata', function (metadatum) {
     return Ember.ObjectProxy.create({
       content: metadatum,

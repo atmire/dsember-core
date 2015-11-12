@@ -1,0 +1,8 @@
+.item-bitstream-edit-row.flagged-for-removal {
+  .bitstream-name,
+  .bitstream-description,
+  .bitstream-format,
+  .bitstream-actions {
+    opacity: $flagged-for-removal-opacity;
+  }
+}

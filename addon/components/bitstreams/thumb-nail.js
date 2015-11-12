@@ -5,7 +5,7 @@ import Holder from 'dsember-core/utils/holder';
 export default Ember.Component.extend({
   layout: layout,
   classNames: [ 'thumbnail' ],
-  runHolderJS: function() {
+  runHolderJS: Ember.on('init', function() {
     if (Ember.isNone(this.get('thumbnailLink'))) {
       Ember.run.scheduleOnce('afterRender', () => {
         Holder.run({
@@ -13,5 +13,5 @@ export default Ember.Component.extend({
         });
       });
     }
-  }.on('didInsertElement')
+  })
 });

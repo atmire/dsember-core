@@ -39,6 +39,8 @@ export default {
   "pagination.prev": "Previous",
   "pagination.next": "Next",
 
+  "item.list.no-title": "Untitled",
+
   "item.detailed.key": "Field",
   "item.detailed.value": "Value",
   "item.detailed.language": "Lang",

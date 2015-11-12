@@ -11,8 +11,12 @@ export default Ember.Component.extend({
   // because if metadata changes, the whole array is
   // thrown away and recreated, because that's how
   // it works in DSpace
-  title: Ember.computed('item.metadata.[]', function() {
-    return chainableFindBy(this.get('item.metadata'), 'key', 'dc.title').get('value');
+  title: Ember.computed('item.metadata.[]', 'i18n.locale', function() {
+    let title = chainableFindBy(this.get('item.metadata'), 'key', 'dc.title').get('value');
+    if (Ember.isEmpty(title)) {
+      title = this.get('i18n').t('item.list.no-title');
+    }
+    return title;
   }),
   author: Ember.computed('item.metadata.[]', function() {
     let authors = this.get('item.metadata').filterBy('key', 'dc.contributor.author').mapBy('value');

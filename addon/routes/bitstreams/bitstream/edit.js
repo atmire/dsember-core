@@ -65,20 +65,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
           }
         });
       });
-
-      //return adapter.ajax(url, "PUT", { data: newFile.data }).then(() => {
-      //  this.get('flashMessages').success(this.get('i18n').t('bitstream.edit.replace.success'));
-      //}, (error) => {
-      //  if (error.name === "SyntaxError") {
-      //    let model = this.modelFor('bitstreams.bitstream');
-      //    model.reload().then(() => {
-      //      this.get('flashMessages').success(this.get('i18n').t('bitstream.edit.metadata.success'));
-      //    });
-      //  }
-      //  else {
-      //    this.get('flashMessages').danger(this.get('i18n').t('bitstream.edit.error.unknown'));
-      //  }
-      //});
     },
     cancel(parentRoute, model) {
       this.transitionTo(`${parentRoute}.edit.bitstreams`, model);

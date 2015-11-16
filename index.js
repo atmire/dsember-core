@@ -37,7 +37,6 @@ module.exports = {
       destDir: path.join('assets', 'fonts')
     });
 
-    target.import(path.join(target.bowerDirectory, 'blueimp-md5', 'js', 'md5.min.js'));
     target.import(path.join(target.bowerDirectory, 'moment', 'min', 'moment.min.js'));
     target.import(path.join(target.bowerDirectory, 'holderjs', 'holder.min.js'));
   }

@@ -17,12 +17,8 @@ export default DS.JSONSerializer.extend(DS.EmbeddedRecordsMixin, {
     return this._super.apply(this, arguments);
   },
   serialize: function(snapshot) {
-    return snapshot.hasMany('metadata').map(function (metadatum) {
-      return {
-        key: metadatum.attr('key'),
-        value: metadatum.attr('value'),
-        language: metadatum.attr('language')
-      };
-    });
+    var data = this._super.apply(this, arguments);
+    data.parentCollectionId = undefined;
+    return data;
   }
 });

@@ -28,6 +28,7 @@ export default {
   "trail.edit.metadata": "Metadata",
   "trail.edit.bitstreams": "Bitstreams",
   "trail.404": "404",
+  "trail.items.new": "New item",
 
   "title.prefix": "dsember",
   "title.home": "Home",
@@ -35,6 +36,7 @@ export default {
   "title.login": "Login",
   "title.edit.metadata": "Edit metadata",
   "title.edit.bitstreams": "Edit bitstreams",
+  "title.items.new": "New item",
 
   "pagination.prev": "Previous",
   "pagination.next": "Next",
@@ -77,6 +79,21 @@ export default {
 
   "item.detailed.collections.head": "This item appears in the following Collection(s)",
 
+  "item.new.head": "Submit a new item",
+  "item.new.select.collection.head": "Select a collection",
+  "item.new.select.collection.label": "Collection",
+  "item.new.select.collection.placeholder": "Select a collection...",
+  "item.new.select.collection.help": "Select the collection you wish to submit an item to.",
+  "item.new.select.collection.error": "Please select a valid collection",
+  "item.new.add.field.head": "Add metadata fields",
+  "item.new.edit.fields.head": "Edit metadata fields",
+  "item.new.remove": "Remove selected fields",
+  "item.new.cancel": "Cancel",
+  "item.new.submit": "Submit",
+  "item.new.error.title": "An item needs a title",
+  "item.new.error.author": "An item needs an author",
+  "item.new.error.save": "The item couldn't be submitted",
+
   "bitstream.detailed.file-section.head": "Files in this item",
   "bitstream.detailed.file-section.name": "Name",
   "bitstream.detailed.file-section.size": "Size",
@@ -108,7 +125,9 @@ export default {
   "sidebar.my-account.head": "My Account",
   "sidebar.my-account.login": "Login",
   "sidebar.my-account.logout": "Logout",
-  "sidebar.my-account.register": "Register",
+
+  "sidebar.submissions.head": "Submissions",
+  "sidebar.submissions.submit": "Submit a new item",
 
   "sidebar.context-collection.head": "This Collection",
   "sidebar.context-collection.home": "Home",

@@ -1,10 +1,16 @@
 import DS from 'ember-data';
-import { md5 } from 'dsember-core/utils/md5';
 
 export default DS.JSONSerializer.extend({
   isNewSerializerAPI: true,
   normalize: function(typeClass, hash) {
-    hash.id = md5(hash.key + hash.value + hash.language);
+    hash.id = this.store.adapterFor('metadatum').generateIdForRecord();
     return this._super.apply(this, arguments);
+  },
+  serialize: function(snapshot) {
+    return {
+      key: snapshot.attr('key'),
+      value: snapshot.attr('value'),
+      language: snapshot.attr('language')
+    };
   }
 });

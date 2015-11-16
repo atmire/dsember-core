@@ -1,0 +1,36 @@
+<h1 class="page-header">{{t "item.new.head"}}</h1>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">{{t "item.new.select.collection.head"}}</div>
+    </div>
+    <div class="panel-body">
+        {{collection-select
+            collections=collections
+            value=model.parentCollectionId
+            hasValidCollection=hasCollection
+            hasChanged=highlightErrors
+        }}
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">{{t "item.new.add.field.head"}}</div>
+    </div>
+    <div class="panel-body">
+      {{items/edit/item-add-metadata onSubmit=(action 'add' model)}}
+    </div>
+</div>
+{{#if model.metadata}}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">{{t "item.new.edit.fields.head"}}</div>
+        </div>
+        <div class="panel-body">
+          {{items/edit/item-metadata-edit-table metadata=proxiedMetadata}}
+            <button class="btn btn-default" {{action "remove" model}}>{{t "item.new.remove"}}</button>
+        </div>
+    </div>
+{{/if}}
+<button class="btn btn-default" {{action "cancel" model}}>{{t "item.new.cancel"}}</button>
+<button class="btn btn-default" {{action "submit" model}}>{{t "item.new.submit"}}</button>

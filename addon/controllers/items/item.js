@@ -11,11 +11,11 @@ export default DSOShowController.extend({
   }),
 
   sidebarSections: Ember.computed('i18n.locale', 'model.id', 'session.isAuthenticated', function() {
-    let result = [];
-    if (this.get('session.isAuthenticated')) {
-      result.push(SidebarSection.create({
+    return [
+      SidebarSection.create({
         id: 'context-item',
         label: this.get('i18n').t('sidebar.context-item.head'),
+        visible: this.get('session.isAuthenticated'),
         children: [
           SidebarSection.create({
             label: this.get('i18n').t('sidebar.context-item.view'),
@@ -32,8 +32,7 @@ export default DSOShowController.extend({
             }
           })
         ]
-      }));
-    }
-    return result;
+      })
+    ];
   })
 });

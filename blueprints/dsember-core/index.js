@@ -13,10 +13,6 @@ module.exports = {
       {
         name: 'bootstrap-sass',
         target: 'bootstrap-sass-official#~3.3.5'
-      },
-      {
-        name: 'blueimp-md5',
-        target: 'JavaScript-MD5#~1.1.1'
       }
     ]);
   }

@@ -18,12 +18,6 @@ module.exports = function(defaults) {
   */
 
   //app.import('bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss');
-  //app.import('bower_components/blueimp-md5/js/md5.min.js', {
-  //  exports: {
-  //    'md5': ['md5']
-  //  }
-  //});
-  app.import('bower_components/blueimp-md5/js/md5.min.js');
   app.import('bower_components/moment/min/moment.min.js');
   app.import('bower_components/holderjs/holder.min.js');
 

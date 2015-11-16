@@ -1,4 +1,4 @@
-import ember from 'ember';
+import Ember from 'ember';
 
 export default Ember.Controller.extend({
   breadCrumbs: Ember.computed('model.name', function(){

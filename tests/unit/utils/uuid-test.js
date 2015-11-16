@@ -1,10 +1,10 @@
-import md5Helper from '../../../utils/md5';
+import uuid from '../../../utils/uuid';
 import { module, test } from 'qunit';
 
-module('Unit | Utility | md5 helper');
+module('Unit | Utility | uuid');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var result = md5Helper();
+  var result = uuid();
   assert.ok(result);
 });

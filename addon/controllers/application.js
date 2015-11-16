@@ -23,35 +23,40 @@ export default Ember.Controller.extend({
   },
 
   sidebarSections: Ember.computed('i18n.locale', 'session.isAuthenticated', function () {
-    let children = [];
-    if (this.get('session.isAuthenticated')) {
-      children.push(SidebarSection.create({
-        label: this.get('i18n').t('sidebar.my-account.logout'),
-        link: {
-          action: 'invalidateSession'
-        }
-      }));
-    }
-    else {
-      children.push(SidebarSection.create({
-        label: this.get('i18n').t('sidebar.my-account.login'),
-        link: {
-          route: 'login'
-        }
-      }));
-      //children.push(SidebarSection.create({
-      //  label: this.get('i18n').t('sidebar.my-account.register'),
-      //  link: {
-      //    route: 'items.show',
-      //    id: 2
-      //  }
-      //}));
-    }
+    var isAuthenticated = this.get('session.isAuthenticated');
     return [
       SidebarSection.create({
         id: 'my-account',
         label: this.get('i18n').t('sidebar.my-account.head'),
-        children: children
+        children: [
+          SidebarSection.create({
+            label: this.get('i18n').t('sidebar.my-account.login'),
+            visible: !isAuthenticated,
+            link: {
+              route: 'login'
+            }
+          }),
+          SidebarSection.create({
+            label: this.get('i18n').t('sidebar.my-account.logout'),
+            visible: isAuthenticated,
+            link: {
+              action: 'invalidateSession'
+            }
+          })
+        ]
+      }),
+      SidebarSection.create({
+        id: 'submissions',
+        label: this.get('i18n').t('sidebar.submissions.head'),
+        visible: isAuthenticated,
+        children: [
+          SidebarSection.create({
+            label: this.get('i18n').t('sidebar.submissions.submit'),
+            link: {
+              route: 'items.new'
+            }
+          })
+        ]
       })
     ];
   })

@@ -2,7 +2,8 @@ import Ember from 'ember';
 import layout from '../templates/components/side-bar';
 import RouteAwareComponent from '../components/route-aware-component';
 
-function orderSections(sections) {
+function filterAndOrderSections(sections) {
+  sections = sections.filterBy('visible');
   sections.forEach(function(section, index) {
     if (Ember.isBlank(section.get('index'))) {
       //add 1 to switch from 0-based and 0.0001 extra,
@@ -11,7 +12,7 @@ function orderSections(sections) {
       section.set('index', index + 1.0001);
     }
     if (Ember.isPresent(section.get('children'))) {
-      section.set('children', orderSections(section.get('children')));
+      section.set('children', filterAndOrderSections(section.get('children')));
     }
   });
   return sections.sortBy('index');
@@ -40,6 +41,6 @@ export default RouteAwareComponent.extend({
         });
       });
 
-      return orderSections(sidebarSections);
+      return filterAndOrderSections(sidebarSections);
   })
 });

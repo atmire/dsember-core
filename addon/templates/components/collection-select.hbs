@@ -1,0 +1,8 @@
+<label for="{{selectId}}">{{t "item.new.select.collection.label"}}:</label>
+{{#x-select id=selectId class="form-control" value=value}}
+  {{#x-option value=-1}}{{t "item.new.select.collection.placeholder"}}{{/x-option}}
+  {{#each collections as |collection|}}
+    {{#x-option value=collection.id}}{{collection.name}}{{/x-option}}
+  {{/each}}
+{{/x-select}}
+<p class="help-block">{{t "item.new.select.collection.help"}}</p>

@@ -23,6 +23,7 @@ export default function(self) {
   });
 
   self.route('items', function() {
+    this.route('new');
     this.route('item', {
       path: ':item_id'
     }, function() {

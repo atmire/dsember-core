@@ -1,4 +1,6 @@
-<h1>{{model.owningCollection.name}}</h1>
+<p class="text-center">{{#link-to 'items.item' model}}{{t "item.full.simple.link"}}{{/link-to}}</p>
 {{items/detailed/item-metadata-table metadata=model.metadata}}
-{{bitstreams/detailed/file-section fileRows=fileRows restNamespace=restNamespace}}
+{{bitstreams/detailed/file-section fileRows=fileRows}}
 {{items/detailed/collection-section collections=model.parentCollectionList}}
+<br>
+<p class="text-center">{{#link-to 'items.item' model}}{{t "item.full.simple.link"}}{{/link-to}}</p>

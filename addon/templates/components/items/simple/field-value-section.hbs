@@ -1,0 +1,15 @@
+{{#if values}}
+  {{#items/simple/simple-item-view-section
+    head=head
+    headClassNames=headClassNames
+    bodyClassNames=bodyClassNames
+  }}
+    {{#if valuesOnSeparateLines}}
+      {{#each values as |value|}}
+        <div>{{value}}</div>
+      {{/each}}
+    {{else}}
+      {{valuesAsString}}
+    {{/if}}
+  {{/items/simple/simple-item-view-section}}
+{{/if}}

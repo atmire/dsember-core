@@ -1,7 +1,7 @@
-<a class="image-link" href="{{originalLink}}" download="{{filename}}">
+<a class="image-link" href="{{originalLink}}" download="{{filename}}" title="{{t 'thumbnail.title' filename=filename}}">
 {{#if thumbnailLink}}
     <img alt="{{t 'thumbnail.alt'}}" src="{{thumbnailLink}}">
 {{else}}
-    <img alt="{{t 'thumbnail.not-found.alt'}}" src="holder.js/100px80?text={{t 'thumbnail.not-found.alt'}}">
+    <img alt="{{t 'thumbnail.not-found.alt'}}" src="holder.js/93x120?text={{t 'thumbnail.not-found.alt'}}">
 {{/if}}
 </a>

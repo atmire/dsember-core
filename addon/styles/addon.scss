@@ -5,8 +5,11 @@
 @import 'bread-crumb-trail';
 @import 'sidebar';
 @import 'footer/footer';
-@import 'bitstreams/thumbnail';
+@import 'components/thumb-nail';
+@import 'components/file-section-row';
+@import 'components/file-metadata';
 @import 'components/list-entry';
+@import 'components/simple-item-view-section';
 @import 'components/item-metadatum-edit-row';
 @import 'components/item-bitstream-edit-row';
 @import 'utils';

@@ -1,5 +1,5 @@
 {{#if model.logo}}
-    <p><img class="logo img-responsive" src="{{logoUrl}}" alt="{{t 'comcol.logo.alt'}}"></p>
+    <p><img class="logo img-responsive" src="{{model.logo.retrieveLink}}" alt="{{t 'comcol.logo.alt'}}"></p>
 {{/if}}
 {{#if model.introductoryText}}
     <p>{{{model.introductoryText}}}</p>

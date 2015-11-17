@@ -1,0 +1,9 @@
+{{#if bitstreams}}
+  {{#items/simple/simple-item-view-section head=head}}
+    {{#each bitstreams as |bitstream|}}
+        <div><a href="{{bitstream.retrieveLink}}" download="{{bitstream.name}}">
+            <i aria-hidden="true" class="glyphicon glyphicon-file"></i> {{bitstream.name}} ({{filesize bitstream.sizeBytes}})
+        </a></div>
+    {{/each}}
+  {{/items/simple/simple-item-view-section}}
+{{/if}}

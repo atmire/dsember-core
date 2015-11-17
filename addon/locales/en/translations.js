@@ -29,6 +29,8 @@ export default {
   "trail.edit.bitstreams": "Bitstreams",
   "trail.404": "404",
   "trail.items.new": "New item",
+  "trail.items.item.full": "Full item record",
+  "trail.items.item.simple": "Simple item record",
 
   "title.prefix": "dsember",
   "title.home": "Home",
@@ -43,9 +45,20 @@ export default {
 
   "item.list.no-title": "Untitled",
 
-  "item.detailed.key": "Field",
-  "item.detailed.value": "Value",
-  "item.detailed.language": "Lang",
+  "item.simple.files.head": "Files",
+  "item.simple.date.head": "Date",
+  "item.simple.authors.head": "Author(s)",
+  "item.simple.abstract.head": "Abstract",
+  "item.simple.uri.head": "URI",
+  "item.simple.collections.head": "Collections",
+  "item.simple.metadata.head": "Metadata",
+  "item.simple.full.link": "Show full item record",
+
+  "item.full.simple.link": "Show simple item record",
+  "item.full.key": "Field",
+  "item.full.value": "Value",
+  "item.full.language": "Lang",
+  "item.full.collections.head": "This item appears in the following Collection(s)",
 
   "item.edit.tab.metadata": "Metadata",
   "item.edit.tab.bitstreams": "Bitstreams",
@@ -76,8 +89,6 @@ export default {
   "item.edit.bitstreams.delete": "Remove selected bitstream(s)",
   "item.edit.bitstreams.remove.success": "Bitstream(s) removed successfully!",
   "item.edit.bitstreams.remove.error": "An error occurred while trying to remove the selected bitstream(s)!",
-
-  "item.detailed.collections.head": "This item appears in the following Collection(s)",
 
   "item.new.head": "Submit a new item",
   "item.new.select.collection.head": "Select a collection",
@@ -115,6 +126,7 @@ export default {
   "bitstream.edit.replace.error": "The file could not be replaced.",
   "bitstream.edit.confirm-exit": "You have unsaved changes, are you sure you want to leave?",
 
+  "thumbnail.title": "Download {{filename}}",
   "thumbnail.alt": "Thumbnail",
   "thumbnail.not-found.alt": "No Thumbnail",
 

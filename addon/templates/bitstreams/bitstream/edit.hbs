@@ -4,10 +4,10 @@
         <div>{{link-to model.parentObject.name parentRoute model.parentObject id="bitstream-parent"}}</div>
     </div>
 {{/if}}
-{{#if originalLink}}
+{{#if model.retrieveLink}}
     <div class="form-group">
         <label for="bitstream-download">{{t 'bitstream.edit.file'}}:</label>
-        <div><a href="{{originalLink}}" download="{{model.name}}" id="bitstream-download">{{model.name}}</a></div>
+        <div><a href="{{model.retrieveLink}}" download="{{model.name}}" id="bitstream-download">{{model.name}}</a></div>
     </div>
 {{/if}}
 <div class="form-group">

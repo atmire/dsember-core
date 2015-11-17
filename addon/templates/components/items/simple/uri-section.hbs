@@ -1,0 +1,7 @@
+{{#if values}}
+  {{#items/simple/simple-item-view-section head=head}}
+    {{#each values as |uri|}}
+        <div><a href={{uri}}>{{uri}}</a></div>
+    {{/each}}
+  {{/items/simple/simple-item-view-section}}
+{{/if}}

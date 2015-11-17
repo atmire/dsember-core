@@ -1,9 +1,7 @@
 import Ember from 'ember';
 import { getShowRouteForDSOType } from 'dsember-core/utils/dso-utils';
-import { combineURLParts } from 'dsember-core/utils/url-utils';
-import NamespaceMixin from 'dsember-core/mixins/namespace';
 
-export default Ember.Controller.extend(NamespaceMixin, {
+export default Ember.Controller.extend({
   file: null,
   fileInputVisible: true,
 
@@ -13,14 +11,6 @@ export default Ember.Controller.extend(NamespaceMixin, {
 
   hasNewFile: Ember.computed.notEmpty('file'),
   hasUnsavedChanges: Ember.computed.or('model.isDirty', 'hasNewFile'),
-
-  //TODO this should be refactored, is duplicated everywhere we need a bitstream download link
-  originalLink: Ember.computed('model.retrieveLink', function () {
-    if (Ember.isPresent(this.get('model.retrieveLink'))) {
-      return combineURLParts(this.get('restNamespace'), this.get('model.retrieveLink'));
-    }
-    return undefined;
-  }),
 
   breadCrumbs: Ember.computed('model', 'i18n.locale', function () {
     return [{

@@ -1,0 +1,5 @@
+{{#items/simple/simple-item-view-section head=head}}
+  {{#each collections as |collection|}}
+      <div>{{link-to collection.name 'collections.collection' collection}}</div>
+  {{/each}}
+{{/items/simple/simple-item-view-section}}

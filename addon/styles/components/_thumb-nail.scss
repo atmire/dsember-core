@@ -1,0 +1,10 @@
+.thumbnail {
+  padding: 0;
+  border: none;
+  margin: 0;
+}
+
+.thumbnail > img,
+.thumbnail a > img {
+  margin-left: 0;
+}

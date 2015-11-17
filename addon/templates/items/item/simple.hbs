@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-xs-6 col-sm-12">
+              {{#items/simple/simple-item-view-section}}
+                {{bitstreams/thumb-nail thumbnailLink=primaryThumbnail.retrieveLink originalLink=primaryBitstream.retrieveLink filename=primaryBitstream.name}}
+              {{/items/simple/simple-item-view-section}}
+            </div>
+            <div class="col-xs-6 col-sm-12">
+              {{items/simple/file-section bitstreams=model.originals}}
+            </div>
+        </div>
+      {{items/simple/date-section metadata=model.metadata}}
+      {{items/simple/author-section metadata=model.metadata}}
+      {{items/simple/metadata-section item=model}}
+    </div>
+    <div class="col-sm-8">
+      {{items/simple/abstract-section metadata=model.metadata}}
+      {{items/simple/uri-section metadata=model.metadata}}
+      {{items/simple/collection-section collections=model.parentCollectionList}}
+    </div>
+</div>

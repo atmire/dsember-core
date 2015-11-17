@@ -27,7 +27,8 @@ export default function(self) {
     this.route('item', {
       path: ':item_id'
     }, function() {
-      this.route('full', { path: '/' });
+      this.route('simple', { path: '/' });
+      this.route('full');
       this.route('edit', function() {
         this.route('metadata');
         this.route('bitstreams');

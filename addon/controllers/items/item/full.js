@@ -1,7 +1,13 @@
 import Ember from 'ember';
-import NamespaceMixin from 'dsember-core/mixins/namespace';
 
-export default Ember.Controller.extend(NamespaceMixin, {
+export default Ember.Controller.extend({
+  breadCrumbs: Ember.computed('model', 'i18n.locale', function () {
+    return [{
+      label: this.get('i18n').t('trail.items.item.full'),
+      path: 'items.item.full',
+      model: this.get('model')
+    }];
+  }),
   //TODO rewrite using Ember.ObjectProxy -> https://poeticsystems.com/blog/ember-checkboxes-and-you
   fileRows: Ember.computed('model.originals.[]', function() {
     let result = [];

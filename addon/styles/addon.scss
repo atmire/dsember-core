@@ -5,18 +5,14 @@
 @import 'bread-crumb-trail';
 @import 'sidebar';
 @import 'footer/footer';
-@import 'components/thumb-nail';
-@import 'components/file-section-row';
-@import 'components/file-metadata';
+@import 'components/bitstreams/thumb-nail';
+@import 'components/bitstreams/detailed/file-section-row';
+@import 'components/bitstreams/detailed/file-metadata';
+@import 'components/items/simple/simple-item-view-section';
+@import 'components/items/edit/item-metadatum-edit-row';
+@import 'components/items/edit/item-bitstream-edit-row';
 @import 'components/list-entry';
-@import 'components/simple-item-view-section';
-@import 'components/item-metadatum-edit-row';
-@import 'components/item-bitstream-edit-row';
 @import 'utils';
 @import 'flash-message';
 @import '404';
-
-
-.tab-content {
-  margin-top: $panel-body-padding;
-}
+@import 'global';

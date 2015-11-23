@@ -4,7 +4,17 @@ import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default DS.RESTAdapter.extend(DataAdapterMixin, {
   authorizer: 'authorizer:dspace',
-  namespace: 'rest',
+
+  initENVProperties: Ember.on('init', function() {
+    let ENV = this.container.lookupFactory('config:environment');
+    if (Ember.isPresent(ENV.namespace)) {
+      this.set('namespace', ENV.namespace);
+    }
+    if (Ember.isPresent(ENV.host)) {
+      this.set('host', ENV.host);
+    }
+  }),
+
   //coalesceFindRequests: true, -> commented out, because it only works for some endpoints (e.g. items) and not others (e.g. communities)
   ajax(url, type, hash) {
     if (Ember.isEmpty(hash)) {

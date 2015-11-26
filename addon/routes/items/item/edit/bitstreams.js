@@ -10,7 +10,7 @@ export default Ember.Route.extend({
       this.controller.get('proxiedBitstreamsFlaggedForRemoval').forEach(function(bitstream) {
         promisesArray.push(bitstream.get('content').destroyRecord());
       });
-      Ember.RSVP.allSettled(promisesArray).then((array) => {
+      Ember.RSVP.allSettled(promisesArray).then((/*array*/) => {
 
         // the REST API returns 200, without any json, but ember expects a json representation,
         // so it will always claim it failed. So for now, we won't post any notification

@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 import { combineURLParts } from 'dsember-core/utils/url-utils';
 
@@ -6,7 +7,7 @@ function addNamespaceToRetrieveLink(applicationAdapter, hash) {
     let namespace = applicationAdapter.get('namespace');
     hash.retrieveLink = combineURLParts(namespace, hash.retrieveLink);
   }
-  return hash
+  return hash;
 }
 
 export default DS.JSONSerializer.extend(DS.EmbeddedRecordsMixin, {

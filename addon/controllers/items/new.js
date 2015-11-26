@@ -47,7 +47,7 @@ export default Ember.Controller.extend({
       model.set('metadata', remainingFields);
       return false; //no need to bubble, the model isn't saved yet.
     },
-    submit(model) {
+    submit(/*model*/) {
       if (!this.get('hasCollection')) {
         this.get('flashMessages').danger(this.get('i18n').t('item.new.select.collection.error'));
       }

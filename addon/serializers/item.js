@@ -16,7 +16,7 @@ export default DS.JSONSerializer.extend(DS.EmbeddedRecordsMixin, {
     }
     return this._super.apply(this, arguments);
   },
-  serialize: function(snapshot) {
+  serialize: function(/*snapshot*/) {
     var data = this._super.apply(this, arguments);
     data.parentCollectionId = undefined;
     return data;

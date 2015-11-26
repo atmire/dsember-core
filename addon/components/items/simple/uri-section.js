@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../../../templates/components/items/simple/uri-section';
-import FieldValueSectionComponent from 'dsember-core/components/items/simple/field-value-section'
+import FieldValueSectionComponent from 'dsember-core/components/items/simple/field-value-section';
 
 export default FieldValueSectionComponent.extend({
   layout: layout,

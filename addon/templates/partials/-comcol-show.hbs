@@ -2,12 +2,12 @@
     <p><img class="logo img-responsive" src="{{model.logo.retrieveLink}}" alt="{{t 'comcol.logo.alt'}}"></p>
 {{/if}}
 {{#if model.introductoryText}}
-    <p>{{{model.introductoryText}}}</p>
+    <div>{{{model.introductoryText}}}</div>
 {{/if}}
 {{#if model.news}}
     <h2>{{t "comcol.news.head"}}</h2>
-    <p>{{{model.news}}}</p>
+    <div>{{{model.news}}}</div>
 {{/if}}
 {{#if model.copyrightText}}
-    <p>{{{model.copyrightText}}}</p>
+    <div>{{{model.copyrightText}}}</div>
 {{/if}}
